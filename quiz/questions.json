@@ -1,0 +1,307 @@
+[
+    {
+        "question": "Quelle est la capitale de la France ?",
+        "options": ["Paris", "Berlin", "Londres", "Rome"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a réalisé le film 'Inception' ?",
+        "options": ["Christopher Nolan", "Steven Spielberg", "Quentin Tarantino", "James Cameron"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus long fleuve du monde ?",
+        "options": ["Le Nil", "L'Amazone", "Le Mississippi", "Le Yangzi Jiang"],
+        "answerIndex": 1
+    },
+    {
+        "question": "En quelle année a eu lieu la Révolution française ?",
+        "options": ["1789", "1812", "1848", "1917"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus haut sommet du monde ?",
+        "options": ["Le mont Everest", "Le K2", "Le mont McKinley", "Le mont Kilimandjaro"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Les Misérables' ?",
+        "options": ["Victor Hugo", "Charles Dickens", "Fyodor Dostoevsky", "Leo Tolstoy"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la capitale de l'Italie ?",
+        "options": ["Rome", "Venise", "Milan", "Florence"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel film a remporté l'Oscar du meilleur film en 1994 ?",
+        "options": ["Forrest Gump", "Le Silence des agneaux", "Titanic", "La Liste de Schindler"],
+        "answerIndex": 1
+    },
+    {
+        "question": "Quelle est la plus grande île du monde ?",
+        "options": ["Groenland", "Borneo", "Madagascar", "Java"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui était le président des États-Unis lors de la guerre de Sécession ?",
+        "options": ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "Andrew Jackson"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel pays est réputé pour ses tulipes et ses moulins à vent ?",
+        "options": ["Pays-Bas", "Belgique", "Danemark", "Norvège"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel film a remporté le premier Oscar du meilleur film en 1929 ?",
+        "options": ["Les Ailes", "A l'ouest, rien de nouveau", "Les Croisades", "L'Arche de Noé"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel océan est le plus grand du monde ?",
+        "options": ["Océan Pacifique", "Océan Atlantique", "Océan Indien", "Océan Arctique"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la capitale de l'Espagne ?",
+        "options": ["Madrid", "Barcelone", "Valence", "Séville"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a peint 'La Joconde' ?",
+        "options": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Michel-Ange"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le pays le plus peuplé du monde ?",
+        "options": ["Chine", "Inde", "États-Unis", "Russie"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Romeo et Juliette' ?",
+        "options": ["William Shakespeare", "Jane Austen", "Charles Dickens", "Mark Twain"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la capitale du Japon ?",
+        "options": ["Tokyo", "Kyoto", "Osaka", "Hiroshima"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand désert du monde ?",
+        "options": ["Le Sahara", "Le désert du Kalahari", "Le désert de Gobi", "Le désert d'Atacama"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel film a remporté l'Oscar du meilleur film en 2020 ?",
+        "options": ["Parasite", "1917", "Joker", "Le Mans 66"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus long fleuve d'Europe ?",
+        "options": ["La Volga", "Le Danube", "La Loire", "Le Rhin"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand océan du monde ?",
+        "options": ["Océan Atlantique", "Océan Pacifique", "Océan Indien", "Océan Arctique"],
+        "answerIndex": 1
+    },
+    {
+        "question": "Qui a peint 'La Nuit étoilée' ?",
+        "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la capitale de l'Allemagne ?",
+        "options": ["Berlin", "Munich", "Hambourg", "Francfort"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand lac d'Afrique ?",
+        "options": ["Le lac Victoria", "Le lac Tanganyika", "Le lac Malawi", "Le lac Nyasa"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'L'Odyssée' ?",
+        "options": ["Homer", "Virgil", "Plato", "Aristotle"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la devise de la France ?",
+        "options": ["Liberté, Égalité, Fraternité", "In God We Trust", "E Pluribus Unum", "God Save the Queen"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Dans quel pays se trouve la ville de Marrakech ?",
+        "options": ["Maroc", "Tunisie", "Algérie", "Égypte"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui est l'auteur de '1984' ?",
+        "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Margaret Atwood"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand désert chaud du monde ?",
+        "options": ["Le Sahara", "Le désert de Sonora", "Le désert d'Arabie", "Le Kalahari"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la capitale de la Russie ?",
+        "options": ["Moscou", "Saint-Pétersbourg", "Kazan", "Novossibirsk"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Le Petit Prince' ?",
+        "options": ["Antoine de Saint-Exupéry", "Albert Camus", "Marcel Proust", "Franz Kafka"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le fleuve le plus long d'Europe ?",
+        "options": ["La Volga", "Le Danube", "Le Rhin", "La Seine"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Dans quel pays se trouve la pyramide de Khéops ?",
+        "options": ["Égypte", "Soudan", "Libye", "Algérie"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Crime et Châtiment' ?",
+        "options": ["Fyodor Dostoevsky", "Leo Tolstoy", "Anton Chekhov", "Nikolai Gogol"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la plus grande île d'Asie ?",
+        "options": ["Bornéo", "Java", "Sumatra", "Honshu"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus haut bâtiment du monde ?",
+        "options": ["Burj Khalifa", "Shanghai Tower", "Abraj Al Bait Clock Tower", "One World Trade Center"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Le Guépard' ?",
+        "options": ["Giuseppe Tomasi di Lampedusa", "Italo Calvino", "Umberto Eco", "Luigi Pirandello"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand pays d'Afrique ?",
+        "options": ["Algérie", "République démocratique du Congo", "Soudan", "Nigeria"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand canyon du monde ?",
+        "options": ["Grand Canyon", "Canyon de Colca", "Canyon de Chelly", "Fish River Canyon"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Orgueil et Préjugés' ?",
+        "options": ["Jane Austen", "Emily Brontë", "Charlotte Brontë", "Louisa May Alcott"],
+        "answerIndex": 0
+    }, 
+    {
+        "question": "Quel est le plus grand désert froid du monde ?",
+        "options": ["Le désert de l'Antarctique", "Le désert du Sahara", "Le désert de Gobi", "Le désert d'Arabie"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Les Fleurs du mal' ?",
+        "options": ["Charles Baudelaire", "Victor Hugo", "Gustave Flaubert", "Émile Zola"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand animal terrestre ?",
+        "options": ["L'éléphant d'Afrique", "Le girafe", "Le rhinocéros blanc", "Le buffle d'Afrique"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la langue la plus parlée dans le monde ?",
+        "options": ["Le mandarin", "L'anglais", "L'espagnol", "L'hindi"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Le Rouge et le Noir' ?",
+        "options": ["Stendhal", "Gustave Flaubert", "Émile Zola", "Guy de Maupassant"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand mammifère marin ?",
+        "options": ["La baleine bleue", "Le cachalot", "L'orque", "Le requin-baleine"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Dans quelle ville se trouve la Tour Eiffel ?",
+        "options": ["Paris", "Londres", "Berlin", "New York"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Anna Karénine' ?",
+        "options": ["Léon Tolstoï", "Fiodor Dostoïevski", "Anton Tchekhov", "Nikolaï Gogol"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la capitale du Canada ?",
+        "options": ["Ottawa", "Toronto", "Vancouver", "Montréal"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a peint 'Les Demoiselles d'Avignon' ?",
+        "options": ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Claude Monet"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand parc national du monde ?",
+        "options": ["Le parc national du Northeast Greenland", "Le parc national de Yellowstone", "Le parc national de Banff", "Le parc national des Everglades"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la devise du Royaume-Uni ?",
+        "options": ["Dieu et mon droit", "Liberté, Égalité, Fraternité", "E pluribus unum", "In God We Trust"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a composé la 'Symphonie n° 9' ?",
+        "options": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la plus haute montagne d'Afrique ?",
+        "options": ["Le Kilimandjaro", "Le mont Kenya", "Le mont Elbrouz", "Le mont Ruwenzori"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Le Petit Nicolas' ?",
+        "options": ["René Goscinny", "Antoine de Saint-Exupéry", "Maurice Sendak", "J.K. Rowling"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la capitale de l'Australie ?",
+        "options": ["Canberra", "Sydney", "Melbourne", "Brisbane"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a écrit 'Les Trois Mousquetaires' ?",
+        "options": ["Alexandre Dumas", "Victor Hugo", "Gustave Flaubert", "Émile Zola"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quelle est la plus grande île de Méditerranée ?",
+        "options": ["La Sicile", "La Sardaigne", "La Corse", "Malte"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Qui a peint 'La Nuit étoilée' ?",
+        "options": ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet"],
+        "answerIndex": 0
+    },
+    {
+        "question": "Quel est le plus grand lac d'Amérique du Nord ?",
+        "options": ["Le lac Supérieur", "Le lac Michigan", "Le lac Huron", "Le lac Érié"],
+        "answerIndex": 0
+    }
+]
