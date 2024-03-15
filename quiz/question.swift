@@ -4,4 +4,5 @@ struct Question: Codable {
     let question: String  //énoncé
     let options: [String]  // réponses potentielles 
     let answerIndex: Int   //index réponse
+    let difficulty : Int //difficulté
 }
