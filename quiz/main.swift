@@ -4,14 +4,32 @@ import Foundation
 func saveScores(joueur: Joueur) {
     let encoder = JSONEncoder()
     
+    
+    let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("scores.json")
+    
     do {
-        let data = try encoder.encode(joueur)
-        try data.write(to: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("scores.json"))
-        print("Scores sauvegardés avec succès.")
+        // verifier que le joueur n'existe pas deja 
+        let data = try Data(contentsOf: fileURL)
+        var joueurs = try JSONDecoder().decode([Joueur].self, from: data)
+        
+        // si oui modifier son score
+        if let existingPlayerIndex = joueurs.firstIndex(where: { $0.nom == joueur.nom }) {
+            joueurs[existingPlayerIndex].score = joueur.score
+        } else {
+            // sinon creation
+            joueurs.append(joueur)
+        }
+        
+        // sauvegarder
+        let encodedData = try encoder.encode(joueurs)
+        try encodedData.write(to: fileURL)
+        
+        print("Scores mis à jour avec succès.")
     } catch {
-        print("Erreur lors de la sauvegarde des scores: \(error.localizedDescription)")
+        print("Erreur lors de la mise à jour des scores: \(error.localizedDescription)")
     }
 }
+
 
 func loadQuestions(difficulty: Int) -> [Question]? {//fonction de récuperation des quest depuis le json  
     guard let url = Bundle.main.url(forResource: "questions", withExtension: "json") else { 
@@ -33,7 +51,6 @@ func loadQuestions(difficulty: Int) -> [Question]? {//fonction de récuperation 
         return nil
     }
 }
-
 
 func main() {
     print("Bienvenue dans le Quiz!")
@@ -65,21 +82,23 @@ func main() {
         return
     }
 
-    // Créer une instance de Quiz avec le nombre de vies correspondant à la difficulté choisie
+    // si difficile durée limitée à 8 secondes
+    let timeLimit: TimeInterval = (difficulty == 3) ? 8.0 : .infinity
+
     let quiz: Quiz
     switch difficulty {
     case 1:
-        quiz = Quiz(questions: questions, lives: 5)
+        quiz = Quiz(questions: questions, lives: 6, timeLimit: timeLimit)
     case 2:
-        quiz = Quiz(questions: questions, lives: 3)
+        quiz = Quiz(questions: questions, lives: 4, timeLimit: timeLimit)
     case 3:
-        quiz = Quiz(questions: questions, lives: 1)
+        quiz = Quiz(questions: questions, lives: 2, timeLimit: timeLimit)
     default:
         fatalError("Difficulté invalide.")
     }
 
     // Démarrer le quiz
-    quiz.start(joueur: &joueur) //passage par référence pour pouvoir modifier l'attribut score
+    quiz.start(joueur: &joueur) // Passage du par reference pour pouvoir modifier le score
     saveScores(joueur : joueur)
 }
 

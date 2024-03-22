@@ -1,46 +1,51 @@
 import Foundation
 
-class Quiz {
-    var questions: [Question]
-    var lives: Int
-    
-    init(questions: [Question], lives: Int) {
-        self.questions = questions
-        self.lives = lives
-    }
-    
-    func start(joueur: inout Joueur) {
+struct Quiz {
+    let questions: [Question]
+    var lives: Int //nombre de vies
+    var timeLimit: TimeInterval //limite de temps
+
+    mutating func start(joueur: inout Joueur) {
         print("Début du quiz!")
         
         for question in questions {
-            // Afficher la question
-            print(question.question)
+            print("\nQuestion: \(question.question)")
+            print("Options:")
             for (index, option) in question.options.enumerated() {
                 print("\(index + 1). \(option)")
             }
             
-            // Demander la réponse du joueur
-            print("Votre réponse (entrez le numéro correspondant): ")
-            guard let input = readLine(), let choice = Int(input), choice > 0 && choice <= question.options.count else {
-                print("Réponse invalide. Passons à la question suivante.")
-                continue
-            }
+            // si le joueur prends le mode difficile, il aura une durée de reponse limitée
+            let timeToAnswer = question.difficulty == 3 ? timeLimit : .infinity
             
-            // Vérifier la réponse
-            let playerChoice = choice - 1 // Pour correspondre à l'index dans les options
-            if playerChoice == question.answerIndex {
-                print("Bonne réponse!")
-                joueur.score += question.difficulty // Ajouter la difficulté de la question au score du joueur
+            // attendre la réponse du joueur
+            print("Vous avez \(Int(timeToAnswer)) secondes pour répondre.")
+            print("Votre réponse: ")
+            let answer = readLine()
+            
+            // vérifier la réponse du joueur
+            if let playerAnswer = answer, let playerChoice = Int(playerAnswer) {
+                if playerChoice - 1 == question.answerIndex {
+                    print("Bonne réponse!")
+                    joueur.score += question.difficulty // ajouter la difficulté de la question en points au score 
+                } else {
+                    print("Mauvaise réponse!")
+                    lives -= 1 //on enleve une vie
+                    if lives == 0 {
+                        print("Vous avez perdu! Votre score final est \(joueur.score).")
+                        return
+                    }
+                }
             } else {
-                print("Mauvaise réponse!")
-                lives -= 1 // Enlever une vie au joueur pour une mauvaise réponse
-                if lives <= 0 {
+                print("Temps écoulé! La question est considérée fausse.")
+                lives -= 1
+                if lives == 0 {
                     print("Vous avez perdu! Votre score final est \(joueur.score).")
                     return
                 }
             }
         }
         
-        print("Félicitations! Vous avez terminé le quiz avec un score de \(joueur.score).")
+        print("Félicitations! Vous avez répondu à toutes les questions avec succès. Votre score final est \(joueur.score).")
     }
 }
