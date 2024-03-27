@@ -5,4 +5,5 @@ struct Question: Codable {
     let options: [String]  // réponses potentielles 
     let answerIndex: Int   //index réponse
     let difficulty : Int //difficulté
+    let quote : String //phrase en cas de réussite
 }

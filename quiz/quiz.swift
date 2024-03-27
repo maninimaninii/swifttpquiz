@@ -57,7 +57,7 @@ struct Quiz {
                 }else{
                     if let playerAnswer = answer, let playerChoice = Int(playerAnswer) {
                         if playerChoice - 1 == question.answerIndex {
-                            print("Bonne réponse!")
+                            print(question.quote)
                             joueur.score += question.difficulty // ajouter la difficulté de la question en points au score 
                         } else {
                             print("Mauvaise réponse!")

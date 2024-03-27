@@ -1,542 +1,496 @@
 [
     {
-        "question": "Quelle est la capitale de la France ?",
-        "options": ["Rome", "Londres", "Berlin", "Paris"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel film a remporté l'Oscar du meilleur film en 2020 ?",
+    "options": ["Parasite","Joker", "Le Mans 66", "1917"],
+    "answerIndex": 0,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'Parasite' a remporté l'Oscar du meilleur film en 2020, marquant une victoire historique pour le cinéma sud-coréen."
     },
     {
-        "question": "Qui a réalisé le film 'Inception' ?",
-        "options": ["Quentin Tarantino", "James Cameron", "Steven Spielberg", "Christopher Nolan"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quelle est la capitale de la France ?",
+    "options": ["Rome", "Londres", "Berlin", "Paris"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! Paris est la capitale de la France, une ville renommée pour sa culture, son histoire et son charme."
     },
     {
-        "question": "Quel est le plus long fleuve du monde ?",
-        "options": ["Le Mississippi", "Le Nil", "Le Yangzi Jiang", "L'Amazone"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a réalisé le film 'Inception' ?",
+    "options": ["Quentin Tarantino", "James Cameron", "Steven Spielberg", "Christopher Nolan"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'Inception' a été réalisé par Christopher Nolan, un cinéaste réputé pour son travail novateur et captivant."
     },
     {
-        "question": "En quelle année a eu lieu la Révolution française ?",
-        "options": ["1812", "1848", "1917", "1789"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "En quelle année a eu lieu la Révolution française ?",
+    "options": ["1812", "1848", "1917", "1789"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! La Révolution française a eu lieu en 1789, un événement majeur qui a marqué l'histoire de la France et du monde."
     },
     {
-        "question": "Quel est le plus haut sommet du monde ?",
-        "options": ["Le K2", "Le mont McKinley", "Le mont Kilimandjaro", "Le mont Everest"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel est le plus haut sommet du monde ?",
+    "options": ["Le K2", "Le mont McKinley", "Le mont Kilimandjaro", "Le mont Everest"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! Le mont Everest est le plus haut sommet du monde, situé dans la chaîne de l'Himalaya, avec une altitude de 8 848 mètres."
     },
     {
-        "question": "Qui a écrit 'Les Misérables' ?",
-        "options": ["Fyodor Dostoevsky", "Leo Tolstoy", "Charles Dickens", "Victor Hugo"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'L'Odyssée' ?",
+    "options": ["Plato", "Aristotle", "Homer", "Virgil"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'L'Odyssée' a été écrit par Homère, un poète épique grec, et est l'un des plus grands chefs-d'œuvre de la littérature mondiale."
     },
     {
-        "question": "Quelle est la capitale de l'Italie ?",
-        "options": ["Venise", "Florence", "Milan", "Rome"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quelle est la devise de la France ?",
+    "options": ["In God We Trust", "God Save the Queen", "Liberté, Égalité, Fraternité", "E Pluribus Unum"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! La devise de la France est 'Liberté, Égalité, Fraternité', un principe fondamental de la République française."
     },
     {
-        "question": "Quel film a remporté l'Oscar du meilleur film en 1994 ?",
-        "options": ["Titanic", "La Liste de Schindler", "Forrest Gump", "Le Silence des agneaux"],
-        "answerIndex": 1,
-        "difficulty": 1
+    "question": "Dans quel pays se trouve la ville de Marrakech ?",
+    "options": ["Tunisie", "Maroc", "Égypte", "Algérie"],
+    "answerIndex": 1,
+    "difficulty": 1,
+    "quote": "C'est correct ! Marrakech est située au Maroc, une ville célèbre pour son architecture, son histoire et sa culture vibrante."
     },
     {
-        "question": "Quelle est la plus grande île du monde ?",
-        "options": ["Borneo", "Madagascar", "Java", "Groenland"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui est l'auteur de '1984' ?",
+    "options": ["Ray Bradbury", "Margaret Atwood", "George Orwell", "Aldous Huxley"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! '1984' a été écrit par George Orwell, un roman dystopique classique qui explore des thèmes puissants liés à la surveillance et à la liberté."
     },
     {
-        "question": "Qui était le président des États-Unis lors de la guerre de Sécession ?",
-        "options": ["Thomas Jefferson", "Andrew Jackson", "George Washington", "Abraham Lincoln"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel est le plus grand désert chaud du monde ?",
+    "options": ["Le désert d'Arabie", "Le désert du Sahara", "Le Kalahari", "Le désert de Sonora"],
+    "answerIndex": 1,
+    "difficulty": 1,
+    "quote": "C'est correct ! Le désert du Sahara est le plus grand désert chaud du monde, couvrant une vaste étendue de territoire en Afrique du Nord."
     },
     {
-        "question": "Quel pays est réputé pour ses tulipes et ses moulins à vent ?",
-        "options": ["Norvège", "Belgique", "Danemark", "Pays-Bas"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quelle est la capitale de la Russie ?",
+    "options": ["Saint-Pétersbourg", "Novossibirsk", "Moscou", "Kazan"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! Moscou est la capitale de la Russie, une ville riche en histoire, en culture et en influence politique."
     },
     {
-        "question": "Quel film a remporté le premier Oscar du meilleur film en 1929 ?",
-        "options": ["A l'ouest, rien de nouveau", "Les Croisades", "L'Arche de Noé", "Les Ailes"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'Le Petit Prince' ?",
+    "options": ["Albert Camus", "Franz Kafka", "Marcel Proust", "Antoine de Saint-Exupéry"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'Le Petit Prince' a été écrit par Antoine de Saint-Exupéry, un conte intemporel apprécié par les lecteurs du monde entier."
     },
     {
-        "question": "Quel océan est le plus grand du monde ?",
-        "options": ["Océan Arctique", "Océan Indien", "Océan Atlantique", "Océan Pacifique"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel est le fleuve le plus long d'Europe ?",
+    "options": ["Le Danube", "La Seine", "La Volga", "Le Rhin"],
+    "answerIndex": 2,
+    "difficulty": 2,
+    "quote": "C'est correct ! La Volga est le fleuve le plus long d'Europe, s'étendant sur une grande partie de la Russie et jouant un rôle crucial dans l'histoire et la culture de la région."
     },
     {
-        "question": "Quelle est la capitale de l'Espagne ?",
-        "options": ["Séville", "Valence", "Barcelone", "Madrid"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Dans quel pays se trouve la pyramide de Khéops ?",
+    "options": ["Libye", "Soudan", "Algérie", "Égypte"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! La pyramide de Khéops se trouve en Égypte, près du Caire. C'est l'une des sept merveilles du monde antique et l'une des structures les plus emblématiques de l'histoire de l'humanité."
     },
     {
-        "question": "Qui a peint 'La Joconde' ?",
-        "options": ["Pablo Picasso", "Michel-Ange", "Vincent van Gogh", "Leonardo da Vinci"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'Crime et Châtiment' ?",
+    "options": ["Leo Tolstoy", "Anton Chekhov", "Fyodor Dostoevsky", "Nikolai Gogol"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'Crime et Châtiment' a été écrit par Fyodor Dostoevsky, un roman classique de la littérature russe explorant les profondeurs de l'âme humaine et les conséquences de l'acte criminel."
     },
     {
-        "question": "Quel est le pays le plus peuplé du monde ?",
-        "options": ["Russie", "Inde", "États-Unis", "Chine"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quelle est la plus grande île d'Asie ?",
+    "options": ["Java", "Sumatra", "Honshu", "Bornéo"],
+    "answerIndex": 3,
+    "difficulty": 3,
+    "quote": "C'est correct ! Bornéo est la plus grande île d'Asie, célèbre pour sa biodiversité unique, ses forêts tropicales et ses cultures indigènes fascinantes."
     },
     {
-        "question": "Qui a écrit 'Romeo et Juliette' ?",
-        "options": ["Jane Austen", "Charles Dickens", "Mark Twain", "William Shakespeare"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel est le plus haut bâtiment du monde ?",
+    "options": ["Shanghai Tower", "Abraj Al Bait Clock Tower", "One World Trade Center", "Burj Khalifa"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! Le Burj Khalifa est le plus haut bâtiment du monde, une structure emblématique située à Dubaï, aux Émirats arabes unis, atteignant une hauteur impressionnante de plus de 828 mètres."
     },
     {
-        "question": "Quelle est la capitale du Japon ?",
-        "options": ["Kyoto", "Osaka", "Hiroshima", "Tokyo"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'Le Guépard' ?",
+    "options": ["Umberto Eco", "Italo Calvino", "Luigi Pirandello", "Giuseppe Tomasi di Lampedusa"],
+    "answerIndex": 3,
+    "difficulty": 3,
+    "quote": "C'est correct ! 'Le Guépard' a été écrit par Giuseppe Tomasi di Lampedusa, un roman italien célèbre pour son portrait saisissant de la fin de l'aristocratie sicilienne."
     },
     {
-        "question": "Quel est le plus grand désert du monde ?",
-        "options": ["Le désert d'Arabie", "Le désert du Kalahari", "Le désert de Gobi", "Le Sahara"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel est le plus grand pays d'Afrique ?",
+    "options": ["Soudan", "Nigeria", "République démocratique du Congo", "Algérie"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! L'Algérie est le plus grand pays d'Afrique en termes de superficie, offrant une diversité géographique et culturelle remarquable."
     },
     {
-        "question": "Quel film a remporté l'Oscar du meilleur film en 2020 ?",
-        "options": ["Joker", "Le Mans 66", "1917", "Parasite"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel est le plus grand canyon du monde ?",
+    "options": ["Canyon de Colca", "Fish River Canyon", "Grand Canyon", "Canyon de Chelly"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! Le Grand Canyon est le plus grand canyon du monde, une merveille naturelle située dans l'État américain de l'Arizona, avec des paysages à couper le souffle et une géologie fascinante."
     },
     {
-        "question": "Quel est le plus long fleuve d'Europe ?",
-        "options": ["Le Danube", "La Loire", "Le Rhin", "La Volga"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'Orgueil et Préjugés' ?",
+    "options": ["Emily Brontë", "Charlotte Brontë", "Jane Austen", "Louisa May Alcott"],
+    "answerIndex": 2,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'Orgueil et Préjugés' a été écrit par Jane Austen, un classique de la littérature anglaise qui explore les thèmes de l'amour, du mariage et de la société."
     },
     {
-        "question": "Quel est le plus grand océan du monde ?",
-        "options": ["Océan Atlantique", "Océan Indien", "Océan Arctique", "Océan Pacifique"],
-        "answerIndex": 1,
-        "difficulty": 1
+    "question": "Quel est le plus grand désert froid du monde ?",
+    "options": ["Le désert de l'Antarctique", "Le désert du Sahara", "Le désert de Gobi", "Le désert d'Arabie"],
+    "answerIndex": 0,
+    "difficulty": 1,
+    "quote": "C'est correct ! Le désert de l'Antarctique est le plus grand désert froid du monde, couvrant une vaste étendue de glace et de neige en Antarctique."
     },
     {
-        "question": "Qui a peint 'La Nuit étoilée' ?",
-        "options": ["Claude Monet", "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'Les Fleurs du mal' ?",
+    "options": ["Victor Hugo", "Gustave Flaubert", "Charles Baudelaire", "Émile Zola"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'Les Fleurs du mal' ont été écrits par Charles Baudelaire, un recueil de poésie majeur qui a marqué la littérature française du XIXe siècle."
     },
     {
-        "question": "Quelle est la capitale de l'Allemagne ?",
-        "options": ["Francfort", "Hambourg", "Berlin", "Munich"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Quel est le plus grand animal terrestre ?",
+    "options": ["Le rhinocéros blanc", "Le buffle d'Afrique", "L'éléphant d'Afrique", "Le girafe"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! L'éléphant d'Afrique est le plus grand animal terrestre, impressionnant par sa taille imposante et sa majesté dans la nature."
     },
     {
-        "question": "Quel est le plus grand lac d'Afrique ?",
-        "options": ["Le lac Tanganyika", "Le lac Nyasa", "Le lac Malawi", "Le lac Victoria"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quelle est la langue la plus parlée dans le monde ?",
+    "options": ["L'anglais", "L'espagnol", "L'hindi", "Le mandarin"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! Le mandarin est la langue la plus parlée dans le monde en termes de nombre de locuteurs natifs. C'est la langue officielle de la Chine et une langue importante dans de nombreux pays asiatiques."
     },
     {
-        "question": "Qui a écrit 'L'Odyssée' ?",
-        "options": ["Plato", "Aristotle", "Homer", "Virgil"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Qui a écrit 'Le Rouge et le Noir' ?",
+    "options": ["Émile Zola", "Guy de Maupassant", "Stendhal", "Gustave Flaubert"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'Le Rouge et le Noir' a été écrit par Stendhal, un roman classique de la littérature française du XIXe siècle, explorant les thèmes de la passion et de l'ambition."
     },
     {
-        "question": "Quelle est la devise de la France ?",
-        "options": ["In God We Trust", "God Save the Queen", "Liberté, Égalité, Fraternité", "E Pluribus Unum"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Quel est le plus grand mammifère marin ?",
+    "options": ["L'orque", "Le cachalot", "La baleine bleue", "Le requin-baleine"],
+    "answerIndex": 2,
+    "difficulty": 1,
+    "quote": "C'est correct ! La baleine bleue est le plus grand mammifère marin, une espèce majestueuse qui règne sur les océans avec sa taille impressionnante."
     },
     {
-        "question": "Dans quel pays se trouve la ville de Marrakech ?",
-        "options": ["Tunisie", "Maroc", "Égypte", "Algérie"],
-        "answerIndex": 1,
-        "difficulty": 1
+    "question": "Dans quelle ville se trouve la Tour Eiffel ?",
+    "options": ["New York", "Paris", "Berlin", "Londres"],
+    "answerIndex": 1,
+    "difficulty": 1,
+    "quote": "C'est correct ! La Tour Eiffel se trouve à Paris, la capitale de la France. C'est l'une des attractions les plus emblématiques et les plus visitées au monde."
     },
     {
-        "question": "Qui est l'auteur de '1984' ?",
-        "options": ["Ray Bradbury", "Margaret Atwood", "George Orwell", "Aldous Huxley"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Qui a écrit 'Anna Karénine' ?",
+    "options": ["Nikolaï Gogol", "Anton Tchekhov", "Fiodor Dostoïevski", "Léon Tolstoï"],
+    "answerIndex": 3,
+    "difficulty": 1,
+    "quote": "C'est correct ! 'Anna Karénine' a été écrit par Léon Tolstoï, un roman majeur de la littérature russe du XIXe siècle, explorant les complexités de la société et de l'amour."
     },
     {
-        "question": "Quel est le plus grand désert chaud du monde ?",
-        "options": ["Le désert d'Arabie", "Le désert du Sahara", "Le Kalahari", "Le désert de Sonora"],
-        "answerIndex": 1,
-        "difficulty": 1
+    "question": "Qui a fondé Microsoft en 1975 ?",
+    "options": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"],
+    "answerIndex": 1,
+    "difficulty": 2,
+    "quote": "C'est correct ! Microsoft a été fondé par Bill Gates en 1975, une entreprise qui allait devenir l'une des plus grandes sociétés de technologie au monde."
     },
     {
-        "question": "Quelle est la capitale de la Russie ?",
-        "options": ["Saint-Pétersbourg", "Novossibirsk", "Moscou", "Kazan"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Quel est le pays le plus grand d'Amérique du Sud ?",
+    "options": ["Colombie", "Argentine", "Pérou", "Brésil"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! Le Brésil est le plus grand pays d'Amérique du Sud en termes de superficie et de population, offrant une diversité culturelle et naturelle remarquable."
     },
     {
-        "question": "Qui a écrit 'Le Petit Prince' ?",
-        "options": ["Albert Camus", "Franz Kafka", "Marcel Proust", "Antoine de Saint-Exupéry"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a découvert la pénicilline en 1928 ?",
+    "options": ["Marie Curie", "Jonas Salk", "Alexander Fleming", "Louis Pasteur"],
+    "answerIndex": 2,
+    "difficulty": 2,
+    "quote": "C'est correct ! La pénicilline a été découverte par Alexander Fleming en 1928, une avancée médicale majeure qui a révolutionné le traitement des infections bactériennes."
     },
     {
-        "question": "Quel est le fleuve le plus long d'Europe ?",
-        "options": ["Le Danube", "La Seine", "La Volga", "Le Rhin"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Quel est le symbole chimique de l'or ?",
+    "options": ["Cu", "Fe", "Ag", "Au"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'Au' est le symbole chimique de l'or, un métal précieux très apprécié pour sa brillance, sa ductilité et sa rareté."
     },
     {
-        "question": "Dans quel pays se trouve la pyramide de Khéops ?",
-        "options": ["Libye", "Soudan", "Algérie", "Égypte"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'Le Comte de Monte-Cristo' ?",
+    "options": ["Gustave Flaubert", "Émile Zola", "Victor Hugo", "Alexandre Dumas"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'Le Comte de Monte-Cristo' a été écrit par Alexandre Dumas, un roman d'aventure classique rempli d'intrigues, de revanche et de justice."
     },
+
     {
-        "question": "Qui a écrit 'Crime et Châtiment' ?",
-        "options": ["Leo Tolstoy", "Anton Chekhov", "Fyodor Dostoevsky", "Nikolai Gogol"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Quel est le plus grand océan du monde ?",
+    "options": ["Océan Arctique", "Océan Indien", "Océan Atlantique", "Océan Pacifique"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! L'Océan Pacifique est le plus grand océan du monde en termes de superficie, couvrant une vaste étendue entre l'Asie, l'Australie, les Amériques et lAntarctique, et abritant une diversité marine impressionnante."
     },
     {
-        "question": "Quelle est la plus grande île d'Asie ?",
-        "options": ["Java", "Sumatra", "Honshu", "Bornéo"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a peint 'La Nuit étoilée' ?",
+    "options": ["Pablo Picasso", "Claude Monet", "Leonardo da Vinci", "Vincent van Gogh"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'La Nuit étoilée' a été peinte par Vincent van Gogh, un chef-d'œuvre impressionniste emblématique célébré pour sa beauté et son expressivité."
     },
     {
-        "question": "Quel est le plus haut bâtiment du monde ?",
-        "options": ["Shanghai Tower", "Abraj Al Bait Clock Tower", "One World Trade Center", "Burj Khalifa"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quelle est la capitale de l'Allemagne ?",
+    "options": ["Hambourg", "Berlin", "Francfort", "Munich"],
+    "answerIndex": 1,
+    "difficulty": 2,
+    "quote": "C'est correct ! Berlin est la capitale de l'Allemagne, une ville dynamique riche en histoire, en culture et en diversité."
     },
     {
-        "question": "Qui a écrit 'Le Guépard' ?",
-        "options": ["Umberto Eco", "Italo Calvino", "Luigi Pirandello", "Giuseppe Tomasi di Lampedusa"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Quel est le plus grand lac d'Afrique ?",
+    "options": ["Le lac Nyasa", "Le lac Tanganyika", "Le lac Malawi", "Le lac Victoria"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! Le lac Victoria est le plus grand lac d'Afrique en termes de superficie, jouant un rôle crucial dans l'écosystème et la vie des populations riveraines."
     },
     {
-        "question": "Quel est le plus grand pays d'Afrique ?",
-        "options": ["Soudan", "Nigeria", "République démocratique du Congo", "Algérie"],
-        "answerIndex": 3,
-        "difficulty": 1
+    "question": "Qui a écrit 'L'Odyssée' ?",
+    "options": ["Virgil", "Plato", "Aristotle", "Homer"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'L'Odyssée' a été écrite par Homère, un poète épique grec. C'est l'un des plus grands chefs-d'œuvre de la littérature mondiale, racontant les aventures d'Ulysse lors de son retour à Ithaque après la guerre de Troie."
     },
     {
-        "question": "Quel est le plus grand canyon du monde ?",
-        "options": ["Canyon de Colca", "Fish River Canyon", "Grand Canyon", "Canyon de Chelly"],
-        "answerIndex": 2,
-        "difficulty": 1
+    "question": "Quelle est la devise de la France ?",
+    "options": ["In God We Trust", "God Save the Queen", "Liberté, Égalité, Fraternité", "E Pluribus Unum"],
+    "answerIndex": 2,
+    "difficulty": 2,
+    "quote": "C'est correct ! La devise de la France est 'Liberté, Égalité, Fraternité', reflétant les valeurs fondamentales de la République française."
     },
     {
-        "question": "Qui a écrit 'Orgueil et Préjugés' ?",
-        "options": ["Emily Brontë", "Charlotte Brontë", "Jane Austen", "Louisa May Alcott"],
-        "answerIndex": 2,
-        "difficulty": 1
-    }, 
-    {
-        "question": "Quel est le plus grand désert froid du monde ?",
-        "options": ["Le désert de l'Antarctique", "Le désert du Sahara", "Le désert de Gobi", "Le désert d'Arabie"],
-        "answerIndex": 0,
-        "difficulty": 1
-    },
-    {
-        "question": "Qui a écrit 'Les Fleurs du mal' ?",
-        "options": ["Victor Hugo", "Gustave Flaubert", "Charles Baudelaire", "Émile Zola"],
-        "answerIndex": 2,
-        "difficulty": 1
-    },
-    {
-        "question": "Quel est le plus grand animal terrestre ?",
-        "options": ["Le rhinocéros blanc", "Le buffle d'Afrique", "L'éléphant d'Afrique", "Le girafe"],
-        "answerIndex": 2,
-        "difficulty": 1
-    },
-    {
-        "question": "Quelle est la langue la plus parlée dans le monde ?",
-        "options": ["L'anglais", "L'espagnol", "L'hindi", "Le mandarin"],
-        "answerIndex": 3,
-        "difficulty": 1
-    },
-    {
-        "question": "Qui a écrit 'Le Rouge et le Noir' ?",
-        "options": ["Émile Zola", "Guy de Maupassant", "Stendhal", "Gustave Flaubert"],
-        "answerIndex": 2,
-        "difficulty": 1
-    },
-    {
-        "question": "Quel est le plus grand mammifère marin ?",
-        "options": ["L'orque", "Le cachalot", "La baleine bleue", "Le requin-baleine"],
-        "answerIndex": 2,
-        "difficulty": 1
-    },
-    {
-        "question": "Dans quelle ville se trouve la Tour Eiffel ?",
-        "options": ["New York", "Paris", "Berlin", "Londres"],
-        "answerIndex": 1,
-        "difficulty": 1
-    },
-    {
-        "question": "Qui a écrit 'Anna Karénine' ?",
-        "options": ["Nikolaï Gogol", "Anton Tchekhov", "Fiodor Dostoïevski", "Léon Tolstoï"],
-        "answerIndex": 3,
-        "difficulty": 1
-    }, {
-        "question": "Qui a fondé Microsoft en 1975 ?",
-        "options": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"],
-        "answerIndex": 1,
-        "difficulty": 2
-    },
-    {
-        "question": "Quel est le pays le plus grand d'Amérique du Sud ?",
-        "options": ["Colombie", "Argentine", "Pérou", "Brésil"],
-        "answerIndex": 3,
-        "difficulty": 2
-    },
-    {
-        "question": "Qui a découvert la pénicilline en 1928 ?",
-        "options": ["Marie Curie", "Jonas Salk", "Alexander Fleming", "Louis Pasteur"],
-        "answerIndex": 2,
-        "difficulty": 2
-    },
-    {
-        "question": "Quel est le symbole chimique de l'or ?",
-        "options": ["Cu", "Fe", "Ag", "Au"],
-        "answerIndex": 3,
-        "difficulty": 2
-    },
-    {
-        "question": "Qui a écrit 'Le Comte de Monte-Cristo' ?",
-        "options": ["Gustave Flaubert", "Émile Zola", "Victor Hugo", "Alexandre Dumas"],
-        "answerIndex": 3,
-        "difficulty": 2
-    },
-    {
-        "question": "Quel est le plus grand océan du monde ?",
-        "options": ["Océan Arctique", "Océan Indien", "Océan Atlantique", "Océan Pacifique"],
-        "answerIndex": 3,
-        "difficulty": 2
-    },
-    {
-        "question": "Qui a peint 'La Nuit étoilée' ?",
-        "options": ["Pablo Picasso", "Claude Monet", "Leonardo da Vinci", "Vincent van Gogh"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Dans quel pays se trouve la ville de Marrakech ?",
+    "options": ["Tunisie", "Maroc", "Algérie", "Égypte"],
+    "answerIndex": 1,
+    "difficulty": 2,
+    "quote": "C'est correct ! Marrakech se trouve au Maroc, une ville célèbre pour son architecture, son histoire et sa culture vibrante."
     },
     {
-        "question": "Quelle est la capitale de l'Allemagne ?",
-        "options": ["Hambourg", "Berlin", "Francfort", "Munich"],
-        "answerIndex": 1,
-        "difficulty": 2
-    },
-    {
-        "question": "Quel est le plus grand lac d'Afrique ?",
-        "options": ["Le lac Nyasa", "Le lac Tanganyika", "Le lac Malawi", "Le lac Victoria"],
-        "answerIndex": 3,
-        "difficulty": 2
-    },
-    {
-        "question": "Qui a écrit 'L'Odyssée' ?",
-        "options": ["Virgil", "Plato", "Aristotle", "Homer"],
-        "answerIndex": 3,
-        "difficulty": 2
-    },
-    {
-        "question": "Quelle est la devise de la France ?",
-        "options": ["In God We Trust", "God Save the Queen", "Liberté, Égalité, Fraternité", "E Pluribus Unum"],
-        "answerIndex": 2,
-        "difficulty": 2
-    },
-    {
-        "question": "Dans quel pays se trouve la ville de Marrakech ?",
-        "options": ["Tunisie", "Maroc", "Algérie", "Égypte"],
-        "answerIndex": 1,
-        "difficulty": 2
-    },
+    "question": "Qui est l'auteur de '1984' ?",
+    "options": ["Ray Bradbury", "Margaret Atwood", "Aldous Huxley", "George Orwell"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! '1984' a été écrit par George Orwell, un roman dystopique majeur explorant les thèmes du totalitarisme et de la surveillance."
+    },                            
     {
-        "question": "Qui est l'auteur de '1984' ?",
-        "options": ["Ray Bradbury", "Margaret Atwood", "Aldous Huxley", "George Orwell"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Quel est le plus grand désert froid du monde ?",
+    "options": ["Le désert du Sahara", "Le désert de Gobi", "Le désert d'Arabie", "Le désert de l'Antarctique"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! Le désert de l'Antarctique est le plus grand désert froid du monde, recouvrant une vaste étendue glacée sur le continent antarctique."
     },
     {
-        "question": "Quel est le plus grand désert froid du monde ?",
-        "options": ["Le désert du Sahara", "Le désert de Gobi", "Le désert d'Arabie", "Le désert de l'Antarctique"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Qui a écrit 'Les Fleurs du mal' ?",
+    "options": ["Victor Hugo", "Gustave Flaubert", "Émile Zola", "Charles Baudelaire"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'Les Fleurs du mal' ont été écrits par Charles Baudelaire, un recueil de poésie majeur dans la littérature française du XIXe siècle."
     },
     {
-        "question": "Qui a écrit 'Les Fleurs du mal' ?",
-        "options": ["Victor Hugo", "Gustave Flaubert", "Émile Zola", "Charles Baudelaire"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Quel est le plus grand animal terrestre ?",
+    "options": ["Le girafe", "Le rhinocéros blanc", "Le buffle d'Afrique", "L'éléphant d'Afrique"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! L'éléphant d'Afrique est le plus grand animal terrestre, avec sa taille imposante et sa force impressionnante."
     },
     {
-        "question": "Quel est le plus grand animal terrestre ?",
-        "options": ["Le girafe", "Le rhinocéros blanc", "Le buffle d'Afrique", "L'éléphant d'Afrique"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Quelle est la langue la plus parlée dans le monde ?",
+    "options": ["L'hindi", "L'anglais", "L'espagnol", "Le mandarin"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! Le mandarin est la langue la plus parlée dans le monde en termes de nombre de locuteurs natifs."
     },
     {
-        "question": "Quelle est la langue la plus parlée dans le monde ?",
-        "options": ["L'hindi", "L'anglais", "L'espagnol", "Le mandarin"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Qui a écrit 'Le Rouge et le Noir' ?",
+    "options": ["Gustave Flaubert", "Émile Zola", "Guy de Maupassant", "Stendhal"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'Le Rouge et le Noir' a été écrit par Stendhal, un roman classique de la littérature française du XIXe siècle."
     },
     {
-        "question": "Qui a écrit 'Le Rouge et le Noir' ?",
-        "options": ["Gustave Flaubert", "Émile Zola", "Guy de Maupassant", "Stendhal"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Quel est le plus grand mammifère marin ?",
+    "options": ["Le cachalot", "L'orque", "Le requin-baleine", "La baleine bleue"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! La baleine bleue est le plus grand mammifère marin, une espèce majestueuse qui règne sur les océans avec sa taille impressionnante."
     },
     {
-        "question": "Quel est le plus grand mammifère marin ?",
-        "options": ["Le cachalot", "L'orque", "Le requin-baleine", "La baleine bleue"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Dans quelle ville se trouve la Tour Eiffel ?",
+    "options": ["Londres", "New York", "Berlin", "Paris"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! La Tour Eiffel se trouve à Paris, la capitale de la France, et est l'une des attractions les plus emblématiques au monde."
     },
     {
-        "question": "Dans quelle ville se trouve la Tour Eiffel ?",
-        "options": ["Londres", "New York", "Berlin", "Paris"],
-        "answerIndex": 3,
-        "difficulty": 2
+    "question": "Qui a écrit 'Anna Karénine' ?",
+    "options": ["Fiodor Dostoïevski", "Anton Tchekhov", "Nikolaï Gogol", "Léon Tolstoï"],
+    "answerIndex": 3,
+    "difficulty": 2,
+    "quote": "C'est correct ! 'Anna Karénine' a été écrit par Léon Tolstoï, un roman majeur de la littérature russe du XIXe siècle."
     },
     {
-        "question": "Qui a écrit 'Anna Karénine' ?",
-        "options": ["Fiodor Dostoïevski", "Anton Tchekhov", "Nikolaï Gogol", "Léon Tolstoï"],
-        "answerIndex": 3,
-        "difficulty": 2
-    }, {
-        "question": "Quel est le nom de la théorie scientifique qui décrit l'origine de l'univers ?",
-        "options": ["Big Bang", "Théorie de l'évolution", "Théorie de la relativité générale", "Théorie des cordes"],
-        "answerIndex": 0,
-        "difficulty": 3
+    "question": "Quel est le nom de la théorie scientifique qui décrit l'origine de l'univers ?",
+    "options": ["Big Bang", "Théorie de l'évolution", "Théorie de la relativité générale", "Théorie des cordes"],
+    "answerIndex": 0,
+    "difficulty": 3,
+    "quote": "C'est correct ! La théorie scientifique qui décrit l'origine de l'univers est le Big Bang, une explosion initiale qui a donné naissance à l'univers tel que nous le connaissons."
     },
+
     {
-        "question": "Quelle est la formule chimique de l'eau distillée ?",
-        "options": ["CO2", "H2O", "NaCl", "HCl"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Quelle est la formule chimique de l'eau distillée ?",
+    "options": ["CO2", "H2O", "NaCl", "HCl"],
+    "answerIndex": 1,
+    "difficulty": 1,
+    "quote": "C'est correct ! La formule chimique de l'eau distillée est H2O, représentant deux atomes d'hydrogène liés à un atome d'oxygène."
     },
     {
-        "question": "Quelle est la capitale de l'Australie ?",
-        "options": ["Canberra", "Sydney", "Melbourne", "Perth"],
-        "answerIndex": 0,
-        "difficulty": 3
+    "question": "Quelle est la capitale de l'Australie ?",
+    "options": ["Canberra", "Sydney", "Melbourne", "Perth"],
+    "answerIndex": 0,
+    "difficulty": 3,
+    "quote": "C'est correct ! Canberra est la capitale de l'Australie, située dans le Territoire de la capitale australienne."
     },
     {
-        "question": "Quel est l'élément chimique le plus abondant dans l'univers ?",
-        "options": ["Oxygène", "Fer", "Hydrogène", "Carbone"],
-        "answerIndex": 2,
-        "difficulty": 3
+    "question": "Quel est l'élément chimique le plus abondant dans l'univers ?",
+    "options": ["Oxygène", "Fer", "Hydrogène", "Carbone"],
+    "answerIndex": 2,
+    "difficulty": 3,
+    "quote": "C'est correct ! L'hydrogène est l'élément chimique le plus abondant dans l'univers, constituant environ 75% de sa masse."
     },
     {
-        "question": "Qui a découvert la radioactivité ?",
-        "options": ["Marie Curie", "Albert Einstein", "Isaac Newton", "Louis Pasteur"],
-        "answerIndex": 0,
-        "difficulty": 3
+    "question": "Qui a découvert la radioactivité ?",
+    "options": ["Marie Curie", "Albert Einstein", "Isaac Newton", "Louis Pasteur"],
+    "answerIndex": 0,
+    "difficulty": 3,
+    "quote": "C'est correct ! La radioactivité a été découverte par Marie Curie, une scientifique pionnière dans le domaine de la physique et de la chimie."
     },
     {
-        "question": "Quel est le plus haut sommet d'Afrique ?",
-        "options": ["Le mont Kenya", "Les monts Rwenzori", "Le mont Ruwenzori", "Le Kilimandjaro"],
-        "answerIndex": 3,
-        "difficulty": 3
+    "question": "Quel est le plus haut sommet d'Afrique ?",
+    "options": ["Le mont Kenya", "Les monts Rwenzori", "Le mont Ruwenzori", "Le Kilimandjaro"],
+    "answerIndex": 3,
+    "difficulty": 3,
+    "quote": "C'est correct ! Le Kilimandjaro est le plus haut sommet d'Afrique, culminant à environ 5 895 mètres d'altitude."
     },
     {
-        "question": "Quelle est la plus grande structure vivante sur Terre ?",
-        "options": ["Le mont Everest", "La forêt amazonienne", "La Grande Barrière de Corail", "Le réseau mycélien"],
-        "answerIndex": 2,
-        "difficulty": 3
+    "question": "Quelle est la plus grande structure vivante sur Terre ?",
+    "options": ["Le mont Everest", "La forêt amazonienne", "La Grande Barrière de Corail", "Le réseau mycélien"],
+    "answerIndex": 2,
+    "difficulty": 3,
+    "quote": "C'est correct ! La Grande Barrière de Corail est la plus grande structure vivante sur Terre, s'étendant sur plus de 2 300 kilomètres au large des côtes du Queensland, en Australie."
     },
     {
-        "question": "Qui a découvert l'Amérique ?",
-        "options": ["Ferdinand Magellan", "Vasco de Gama", "Christophe Colomb", "Amerigo Vespucci"],
-        "answerIndex": 2,
-        "difficulty": 3
+    "question": "Qui a découvert l'Amérique ?",
+    "options": ["Ferdinand Magellan", "Vasco de Gama", "Christophe Colomb", "Amerigo Vespucci"],
+    "answerIndex": 2,
+    "difficulty": 3,
+    "quote": "C'est correct ! Christophe Colomb est généralement crédité pour la découverte de l'Amérique en 1492, bien que les habitants autochtones y vivaient depuis des millénaires."
     },
     {
-        "question": "Quelle est la capitale de l'Égypte antique ?",
-        "options": ["Le Caire", "Memphis", "Thèbes", "Alexandrie"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Quelle est la capitale de l'Égypte antique ?",
+    "options": ["Le Caire", "Memphis", "Thèbes", "Alexandrie"],
+    "answerIndex": 1,
+    "difficulty": 3,
+    "quote": "C'est correct ! Memphis était la capitale de l'Égypte antique, jouant un rôle central dans son histoire et sa civilisation pendant des siècles."
     },
     {
-        "question": "Quelle est la plus grande planète du système solaire ?",
-        "options": ["Neptune", "Saturne", "Jupiter", "Uranus"],
-        "answerIndex": 2,
-        "difficulty": 3
+    "question": "Quelle est la plus grande planète du système solaire ?",
+    "options": ["Neptune", "Saturne", "Jupiter", "Uranus"],
+    "answerIndex": 2,
+    "difficulty": 3,
+    "quote": "C'est correct ! Jupiter est la plus grande planète du système solaire, avec une masse et un diamètre bien supérieurs à ceux des autres planètes."
     },
     {
-        "question": "Quelle est la montagne la plus haute d'Europe ?",
-        "options": ["Le mont Blanc", "Le mont Cervin", "Le mont Ararat", "Le mont Elbrouz"],
-        "answerIndex": 3,
-        "difficulty": 3
+    "question": "Quelle est la montagne la plus haute d'Europe ?",
+    "options": ["Le mont Blanc", "Le mont Cervin", "Le mont Ararat", "Le mont Elbrouz"],
+    "answerIndex": 3,
+    "difficulty": 3,
+    "quote": "C'est correct ! Le mont Elbrouz est la montagne la plus haute d'Europe, située dans le Caucase et culminant à environ 5 642 mètres d'altitude."
     },
     {
-        "question": "Quel est le plus grand désert du monde en termes de superficie ?",
-        "options": ["Le désert du Sahara", "Le désert de Gobi", "Le désert d'Arabie", "Le désert de l'Antarctique"],
-        "answerIndex": 0,
-        "difficulty": 3
+    "question": "Quel est le plus grand désert du monde en termes de superficie ?",
+    "options": ["Le désert du Sahara", "Le désert de Gobi", "Le désert d'Arabie", "Le désert de l'Antarctique"],
+    "answerIndex": 0,
+    "difficulty": 3,
+    "quote": "C'est correct ! Le désert du Sahara est le plus grand désert du monde en termes de superficie, couvrant une vaste zone de l'Afrique du Nord."
     },
     {
-        "question": "Qui a inventé la théorie de la relativité restreinte ?",
-        "options": ["Niels Bohr", "Albert Einstein", "Isaac Newton", "Stephen Hawking"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Qui a inventé la théorie de la relativité restreinte ?",
+    "options": ["Niels Bohr", "Albert Einstein", "Isaac Newton", "Stephen Hawking"],
+    "answerIndex": 1,
+    "difficulty": 3,
+    "quote": "C'est correct ! Albert Einstein est l'homme derrière la théorie de la relativité restreinte, une avancée révolutionnaire en physique théorique."
     },
     {
-        "question": "Quelle est la durée de rotation de la Terre sur elle-même en heures ?",
-        "options": ["12 heures", "24 heures", "36 heures", "48 heures"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Quelle est la durée de rotation de la Terre sur elle-même en heures ?",
+    "options": ["12 heures", "24 heures", "36 heures", "48 heures"],
+    "answerIndex": 1,
+    "difficulty": 3,
+    "quote": "C'est correct ! La Terre effectue une rotation complète sur elle-même en environ 24 heures, ce qui définit une journée."
     },
     {
-        "question": "Quelle est la ville la plus peuplée du monde ?",
-        "options": ["Mumbai", "Tokyo", "Delhi", "Shanghai"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Quelle est la ville la plus peuplée du monde ?",
+    "options": ["Mumbai", "Tokyo", "Delhi", "Shanghai"],
+    "answerIndex": 1,
+    "difficulty": 3,
+    "quote": "C'est correct ! Tokyo est la ville la plus peuplée du monde, avec une population métropolitaine de plusieurs dizaines de millions d'habitants."
     },
     {
-        "question": "Quel est le plus grand océan du monde ?",
-        "options": ["Océan Atlantique", "Océan Pacifique", "Océan Indien", "Océan Arctique"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Quel est le plus grand océan du monde ?",
+    "options": ["Océan Atlantique", "Océan Pacifique", "Océan Indien", "Océan Arctique"],
+    "answerIndex": 1,
+    "difficulty": 3,
+    "quote": "C'est correct ! L'Océan Pacifique est le plus grand océan du monde en termes de superficie, couvrant une vaste étendue à travers l'hémisphère nord et sud."
     },
     {
-        "question": "Qui a été le premier homme à poser le pied sur la Lune ?",
-        "options": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Qui a été le premier homme à poser le pied sur la Lune ?",
+    "options": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"],
+    "answerIndex": 1,
+    "difficulty": 3,
+    "quote": "C'est correct ! Neil Armstrong a été le premier homme à poser le pied sur la Lune lors de la mission Apollo 11 en 1969, marquant un moment historique dans l'exploration spatiale."
     },
     {
-        "question": "Quel est le plus grand lac du monde en termes de superficie ?",
-        "options": ["Le lac Baïkal", "Le lac Supérieur", "Le lac Victoria", "Le lac Tanganyika"],
-        "answerIndex": 0,
-        "difficulty": 3
+    "question": "Quel est le plus grand lac du monde en termes de superficie ?",
+    "options": ["Le lac Baïkal", "Le lac Supérieur", "Le lac Victoria", "Le lac Tanganyika"],
+    "answerIndex": 0,
+    "difficulty": 3,
+    "quote": "C'est correct ! Le lac Baïkal en Sibérie est le plus grand lac du monde en termes de superficie, contenant environ 20% de l'eau douce non gelée de la surface de la Terre."
     },
     {
-        "question": "Quelle est la durée moyenne d'une année sur Terre en jours ?",
-        "options": ["366 jours", "365,25 jours", "364 jours", "365 jours"],
-        "answerIndex": 1,
-        "difficulty": 3
+    "question": "Quelle est la durée moyenne d'une année sur Terre en jours ?",
+    "options": ["366 jours", "365,25 jours", "364 jours", "365 jours"],
+    "answerIndex": 1,
+    "difficulty": 3,
+    "quote": "C'est correct ! La durée moyenne d'une année sur Terre est d'environ 365,25 jours, ce qui correspond à une révolution complète autour du Soleil."
     },
     {
-        "question": "Quelle est la plus grande mer du monde ?",
-        "options": ["La mer des Caraïbes", "La mer de Chine méridionale", "La mer Méditerranée", "La mer des Philippines"],
-        "answerIndex": 3,
-        "difficulty": 3
+    "question": "Quelle est la plus grande mer du monde ?",
+    "options": ["La mer des Caraïbes", "La mer de Chine méridionale", "La mer Méditerranée", "La mer des Philippines"],
+    "answerIndex": 3,
+    "difficulty": 3,
+    "quote": "C'est correct ! La mer des Philippines est la plus grande mer du monde en termes de superficie, s'étendant à travers l'océan Pacifique occidental."
     }
-    
+
 ]
 
