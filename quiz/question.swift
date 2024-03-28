@@ -1,3 +1,5 @@
+import Foundation
+
 struct Question: Codable {
 
     // structure qui representera le type de donnée des questions chargées
