@@ -45,11 +45,12 @@ func saveScores(joueur: Joueur) {
 
 
 
-func modifyQuestions() {  //fonction qui permet de modifier la banque de questions
+func modifyQuestions() {
     print("Éditeur de banque de questions:")
     print("Quel niveau de difficulté souhaitez-vous modifier ? (1: Facile, 2: Moyen, 3: Difficile): ", terminator: "")
 
-    while difficulty == nil { // l'utilisateur choisit une difficulté concernée car beaucoup de questions
+    var difficulty = -1
+    while difficulty == -1 {
         guard let difficultyInput = readLine(), let chosenDifficulty = Int(difficultyInput), chosenDifficulty >= 1 && chosenDifficulty <= 3 else {
             print("Niveau de difficulté invalide. Veuillez entrer un nombre entre 1 et 3.")
             continue
@@ -62,7 +63,8 @@ func modifyQuestions() {  //fonction qui permet de modifier la banque de questio
     print("2. Ajouter une question")
     print("Votre choix: ", terminator: "")
 
-     while choice == nil {
+    var choice = -1
+    while choice == -1 {
         guard let choiceInput = readLine(), let chosenChoice = Int(choiceInput), chosenChoice == 1 || chosenChoice == 2 else {
             print("Choix invalide. Veuillez entrer 1 ou 2.")
             continue
@@ -80,36 +82,33 @@ func modifyQuestions() {  //fonction qui permet de modifier la banque de questio
     case 1:
         print("Voici les questions actuelles pour le niveau de difficulté \(difficulty):")
         let filteredQuestions = filterQuestionsClosed(difficulty: difficulty, questions: loadedQuestions)
-        for (index, question) in filteredQuestions.enumerated() {  //on affiche toutes les questions concernées avec un index
+        for (index, question) in filteredQuestions.enumerated() {
             print("\(index + 1). \(question.question)")
         }
 
-        pwhile deleteIndex == nil {
-        print("Entrez le numéro de la question que vous souhaitez supprimer : ", terminator: "")  //l'utilisateur choisit l'index de la question
-        guard let deleteIndexInput = readLine(), let chosenIndex = Int(deleteIndexInput), chosenIndex >= 1 && chosenIndex <= filteredQuestions.count else {
-        print("Numéro de question invalide. Veuillez entrer un numéro valide.")
-        continue }
+        var deleteIndex = -1
+        while deleteIndex == -1 {
+            print("Entrez le numéro de la question que vous souhaitez supprimer : ", terminator: "")
+            guard let deleteIndexInput = readLine(), let chosenIndex = Int(deleteIndexInput), chosenIndex >= 1 && chosenIndex <= filteredQuestions.count else {
+                print("Numéro de question invalide. Veuillez entrer un numéro valide.")
+                continue
+            }
             deleteIndex = chosenIndex
-        }   
+        }
 
         let deletedQuestion = filteredQuestions[deleteIndex - 1]
         print("Question supprimée: \(deletedQuestion.question)")
 
-        // supprimer la question de la liste chargée
-        loadedQuestions.removeAll { $0.question == deletedQuestion.question } 
+        loadedQuestions.removeAll { $0.question == deletedQuestion.question }
 
-        // mettre à jour le fichier JSON après suppression de la question
         do {
             try saveQuestions(questions: loadedQuestions)
-            print("Question supprimée avec succès.")
+            print("Question supprimée avec succès.  \n\n")
         } catch {
             print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
         }
 
-
-
     case 2:
-        // Ajouter une question
         print("Ajout d'une nouvelle question:")
         print("Entrez l'énoncé de la question: ", terminator: "")
         guard let newQuestion = readLine(), !newQuestion.isEmpty else {
@@ -119,45 +118,42 @@ func modifyQuestions() {  //fonction qui permet de modifier la banque de questio
 
         var reponses = [String]()
         for i in 1...4 {
-            var response: String?
-            while response == nil {
+            var response = ""
+            while response.isEmpty {
                 print("Entrez la réponse \(i): ", terminator: "")
-                response = readLine()
-                if response == nil || response!.isEmpty {
+                response = readLine() ?? ""
+                if response.isEmpty {
                     print("Réponse invalide. Veuillez entrer une réponse valide.")
                 }
             }
-            reponses.append(response!)
+            reponses.append(response)
         }
 
-        var answerIndex: Int?
-        while answerIndex == nil {
-            print("Entrez l'index de la réponse correcte (1-4): ", terminator: "")
-            guard let answerIndexInput = readLine(), let index = Int(answerIndexInput), index >= 1 && index <= 4 else {
-                print("Index de réponse invalide. Veuillez entrer un index valide.")
-                continue
+           var answerIndex = -1
+            while answerIndex == -1 {
+                print("Entrez l'index de la réponse correcte (1-4) : ", terminator: "")
+                guard let answerIndexInput = readLine(), let index = Int(answerIndexInput), index >= 1 && index <= 4 else {
+                    print("Index de réponse invalide. Veuillez entrer un index valide.")
+                    continue
+                }
+                answerIndex = index
             }
-            answerIndex = index
-        }
 
-        var quote: Int?
-        while quote == nil {
-            print("Entrez la quote de la question (1-10): ", terminator: "")
-            guard let quoteInput = readLine(), let q = Int(quoteInput), q >= 1 && q <= 10 else {
-                print("Quote de la question invalide. Veuillez entrer une quote valide.")
-                continue
-            }
-            quote = q
+         var quote = ""
+    while quote.isEmpty {
+        print("Entrez la quote de la question (1-10) : ", terminator: "")
+        quote = readLine() ?? ""
+        if quote.isEmpty{
+            print("Quote de la question invalide. Veuillez entrer une quote valide.")
         }
+    }
 
-        //création de la nouvelle question et ajout dans la liste 
         let newQuestionObject = Question(question: newQuestion, options: reponses, answerIndex: answerIndex - 1, difficulty: difficulty)
         loadedQuestions.append(newQuestionObject)
 
-        // Mettre à jour le fichier JSON après ajout de la question
         do {
             try saveQuestions(questions: loadedQuestions)
-            print("Question ajoutée avec succès.")
+            print("Question ajoutée avec succès.  \n\n")
         } catch {
             print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
         }
@@ -166,7 +162,6 @@ func modifyQuestions() {  //fonction qui permet de modifier la banque de questio
         print("Choix invalide.")
     }
 }
-
 
 
 
@@ -230,4 +225,17 @@ func leaderboard(joueur: Joueur) { //fonction qui permet d'afficher le tableau d
     } catch {
         print("Erreur lors de la lecture du fichier de scores: \(error.localizedDescription)")
     }
+}
+
+
+func saveQuestions(questions: [Question]) throws {
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    let data = try encoder.encode(questions)
+    guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+        throw NSError(domain: "InvalidDirectory", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid documents directory"])
+    }
+    let saveURL = documentsDirectory.appendingPathComponent("questions.json")
+    try data.write(to: saveURL)
+    print("Questions saved successfully.")
 }

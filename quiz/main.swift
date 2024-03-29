@@ -4,16 +4,13 @@ import Foundation
 func main() {
     var continuerJeu = true
 
-    guard let questions = loadQuestions() else {
-                print("Impossible de charger les questions.")
-                return
-            }
+    
 
     while continuerJeu {
-        print("Menu Principal:")
+        print("\n Menu Principal: \n")
         print("1. Démarrer le jeu")
         print("2. Éditeur de banque de questions")
-        print("3. Quitter")
+        print("3. Quitter \n")
         print("Votre choix: ", terminator: "")
 
         guard let choice = readLine(), let menuChoice = Int(choice) else {
@@ -23,6 +20,10 @@ func main() {
 
         switch menuChoice {
         case 1:
+            guard let questions = loadQuestions() else {
+                print("Impossible de charger les questions.")
+                return
+            }
             // Démarrer le jeu
             print("Bienvenue dans le Quiz!")
             
@@ -68,8 +69,7 @@ func main() {
             leaderboard(joueur: joueur)
             
         case 2:
-            // editeur questions
-            print("Bienvenue dans l'éditeur de la banque de questions.")
+            modifyQuestions()
             
             
         case 3:
