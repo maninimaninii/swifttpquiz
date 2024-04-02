@@ -306,12 +306,98 @@ func modifyQuestions() {
         } catch {
             print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
         }
+         case 3:
+        print("Modification d'une question:")
+        print("Voici les questions actuelles pour le niveau de difficulté \(difficulty):")
+        let filteredQuestions = loadedQuestions.filter { $0.difficulty == difficulty }
+        for (index, question) in filteredQuestions.enumerated() {
+            print("\(index + 1). \(question.question)")
+        }
 
+        var modifyIndex = -1
+        while modifyIndex == -1 {
+            print("Entrez le numéro de la question que vous souhaitez modifier : ", terminator: "")
+            guard let modifyIndexInput = readLine(), let chosenIndex = Int(modifyIndexInput), chosenIndex >= 1 && chosenIndex <= filteredQuestions.count else {
+                print("Numéro de question invalide. Veuillez entrer un numéro valide.")
+                continue
+            }
+            modifyIndex = chosenIndex
+        }
+
+        let selectedQuestion = filteredQuestions[modifyIndex - 1]
+
+        print("Que souhaitez-vous modifier ?")
+        print("1. Énoncé de la question")
+        print("2. Réponses")
+        print("3. Tout\n")
+        print("Votre choix: ", terminator: "")
+
+        var modificationChoice = -1
+        while modificationChoice == -1 {
+            guard let modificationChoiceInput = readLine(), let chosenModificationChoice = Int(modificationChoiceInput), chosenModificationChoice >= 1 && chosenModificationChoice <= 3 else {
+                print("Choix invalide. Veuillez entrer 1, 2 ou 3.")
+                continue
+            }
+            modificationChoice = chosenModificationChoice
+        }
+
+        switch modificationChoice {
+        case 1:
+            print("Entrez le nouvel énoncé de la question: ", terminator: "")
+            guard let newQuestion = readLine(), !newQuestion.isEmpty else {
+                print("Énoncé de la question invalide.")
+                return
+            }
+            loadedQuestions[modifyIndex - 1].question = newQuestion
+        case 2:
+            var newResponses = [String]()
+            for i in 1...4 {
+                var response = ""
+                while response.isEmpty {
+                    print("Entrez la nouvelle réponse \(i): ", terminator: "")
+                    response = readLine() ?? ""
+                    if response.isEmpty {
+                        print("Réponse invalide. Veuillez entrer une réponse valide.")
+                    }
+                }
+                newResponses.append(response)
+            }
+            loadedQuestions[modifyIndex - 1].options = newResponses
+        case 3:
+            print("Entrez le nouvel énoncé de la question: ", terminator: "")
+            guard let newQuestion = readLine(), !newQuestion.isEmpty else {
+                print("Énoncé de la question invalide.")
+                return
+            }
+            loadedQuestions[modifyIndex - 1].question = newQuestion
+
+            var newResponses = [String]()
+            for i in 1...4 {
+                var response = ""
+                while response.isEmpty {
+                    print("Entrez la nouvelle réponse \(i): ", terminator: "")
+                    response = readLine() ?? ""
+                    if response.isEmpty {
+                        print("Réponse invalide. Veuillez entrer une réponse valide.")
+                    }
+                }
+                newResponses.append(response)
+            }
+            loadedQuestions[modifyIndex - 1].options = newResponses
+        default:
+            print("Choix invalide.")
+        }
+
+        do {
+            try saveQuestions(questions: loadedQuestions)
+            print("Question modifiée avec succès.  \n\n")
+        } catch {
+            print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
+        }
     default:
         print("Choix invalide.")
     }
 }
-
 
 
 //fonction pour filtrer les questions selon le niveau de difficulté
