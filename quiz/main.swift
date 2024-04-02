@@ -25,7 +25,7 @@ func main() {
                 return
             }
             // Démarrer le jeu
-            print("Bienvenue dans le Quiz!")
+            print("Bienvenue dans le Quiz!\n")
             
             // Demander le nom du joueur
             print("Entrez votre nom: ")
@@ -37,7 +37,7 @@ func main() {
             // Demander au joueur de choisir une difficulté
             var difficulty: Int = 0
             while difficulty < 1 || difficulty > 3 {
-                print("Choisissez votre difficulté (1: Facile, 2: Moyen, 3: Difficile): ")
+                print("\nChoisissez votre difficulté (1: Facile, 2: Moyen, 3: Difficile): ")
                 if let input = readLine(), let chosenDifficulty = Int(input) {
                     difficulty = chosenDifficulty
                 } else {
@@ -85,5 +85,4 @@ func main() {
 
 // Appeler la fonction principale
 main()
-
 

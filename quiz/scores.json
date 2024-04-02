@@ -1,0 +1,17 @@
+[
+    {
+      "nom" : "Sara",
+      "difficulty" : 1,
+      "score" : 12
+    },
+    {
+      "nom" : "Amine",
+      "difficulty" : 1,
+      "score" : 15
+    },
+    {
+      "nom" : "Manny",
+      "difficulty" : 1,
+      "score" : 6
+    }
+  ]

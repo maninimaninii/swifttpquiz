@@ -2,13 +2,123 @@ import Foundation
 
 
 struct Question: Codable {
+  let question: String  // énoncé
+  let options: [String]  // réponses potentielles
+  let answerIndex: Int   // index réponse
+  let difficulty: Int    // difficulté
+  let quote: String      // phrase en cas de réussite
 
-    // structure qui representera le type de donnée des questions chargées
-    let question: String  //énoncé
-    let options: [String]  // réponses potentielles 
-    let answerIndex: Int   //index réponse
-    let difficulty : Int //difficulté
+  private enum CodingKeys: String, CodingKey {
+      case question, options, answerIndex, difficulty, quote
+  }
 }
+
+// Function to load JSON data from the questions.json file
+func loadQuestions() -> [Question]? {
+  if let jsonData = loadJsonData(fileName: "questions.json") {
+      do {
+          let decoder = JSONDecoder()
+          let questions = try decoder.decode([Question].self, from: jsonData)
+          return questions
+      } catch {
+          print("Error decoding JSON: \(error)")
+          return nil
+      }
+  } else {
+      return nil
+  }
+}
+
+// Function to load JSON data from a file
+func loadJsonData(fileName: String) -> Data? {
+  let currentDirectoryURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+  let jsonFileURL = currentDirectoryURL.appendingPathComponent(fileName)
+  do {
+      let jsonData = try Data(contentsOf: jsonFileURL)
+      return jsonData
+  } catch {
+      print("Error loading JSON file: \(error)")
+      return nil
+  }
+}
+
+
+
+
+struct Joueur: Codable {
+    let nom: String
+    var score: Int
+    var difficulty: Int
+}
+
+// Fonction pour afficher le tableau des scores concernant la difficulté choisie par le joueur
+func leaderboard(joueur: Joueur) {
+    do {
+        // Charger les données de scores depuis le fichier
+        let fileURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("scores.json")
+        let data = try Data(contentsOf: fileURL)
+        let decoder = JSONDecoder()
+        let allPlayers = try decoder.decode([Joueur].self, from: data)
+
+        // Filtrer les joueurs ayant la même difficulté que le joueur actuel
+        let filteredPlayers = allPlayers.filter { $0.difficulty == joueur.difficulty }
+
+        // Trier les joueurs par score décroissant
+        let sortedPlayers = filteredPlayers.sorted(by: { $0.score > $1.score })
+
+        // Afficher le classement
+        print("Classement des joueurs (Difficulté \(joueur.difficulty)):\n")
+        for (index, player) in sortedPlayers.enumerated() {
+            print("\(index + 1). \(player.nom) - Score: \(player.score)")
+        }
+    } catch {
+        print("Erreur lors de la lecture du fichier de scores: \(error.localizedDescription)")
+    }
+}
+
+// Fonction pour sauvegarder les scores des joueurs
+func saveScores(joueur: Joueur) {
+    let fileManager = FileManager.default
+    let currentDirectory = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+    let fileURL = currentDirectory.appendingPathComponent("scores.json")
+
+    var players: [Joueur] = []
+
+    // Vérifier si le fichier existe
+    if fileManager.fileExists(atPath: fileURL.path) {
+        // Charger les joueurs depuis le fichier
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let decoder = JSONDecoder()
+            players = try decoder.decode([Joueur].self, from: data)
+        } catch {
+            print("Erreur lors du chargement des scores: \(error.localizedDescription)")
+        }
+    }
+
+    // Vérifier si le joueur existe déjà avec le même niveau de difficulté
+    if let existingPlayerIndex = players.firstIndex(where: { $0.nom == joueur.nom && $0.difficulty == joueur.difficulty }) {
+        // Mettre à jour le score du joueur existant
+        players[existingPlayerIndex].score = joueur.score
+    } else {
+        // Ajouter un nouvel enregistrement pour ce joueur et ce niveau de difficulté
+        players.append(joueur)
+    }
+
+    // Enregistrer les joueurs mis à jour dans le fichier
+    do {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try encoder.encode(players)
+        try data.write(to: fileURL)
+        print("Scores sauvegardés avec succès.")
+    } catch {
+        print("Erreur lors de la sauvegarde des scores: \(error.localizedDescription)")
+    }
+}
+
+
+
 
 
 
@@ -17,30 +127,30 @@ struct Quiz {
     var lives: Int //nombre de vies
     var timeLimit: TimeInterval //limite de temps
 
-   mutating func start() {
+mutating func start(joueur: inout Joueur) {
     print("Début du quiz!")
-    
+
     for question in questions {
         print("\nQuestion: \(question.question)")
         print("Options:")
         for (index, option) in question.options.enumerated() {
             print("\(index + 1). \(option)")
         }
-        
+      print("\n")
+
         // si le joueur prend le mode difficile, il aura une durée de réponse limitée
         let timeToAnswer = question.difficulty == 3 ? timeLimit : .infinity
-        
-        // enregistrer le début du délai de réponse
         let startTime = Date()
-        
-        // attendre la réponse du joueur
-        if(question.difficulty == 3){
-        print("Vous avez \(Int(timeToAnswer)) secondes pour répondre.")}
+
+        if question.difficulty == 3 {
+            // attendre la réponse du joueur
+            print("Vous avez \(Int(timeToAnswer)) secondes pour répondre.")
+        }
         print("Votre réponse: ")
-        
+
         var validAnswer = false // Variable pour vérifier la validité de la réponse
         var chosenIndex: Int? // Variable pour stocker la réponse choisie
-        
+
         // Boucle jusqu'à ce qu'une réponse valide soit entrée
         while !validAnswer {
             if let answer = readLine(), let playerChoice = Int(answer) {
@@ -54,9 +164,9 @@ struct Quiz {
                 print("Réponse invalide. Veuillez entrer un nombre entre 1 et \(question.options.count).")
             }
         }
-        
-        // Vérifier le temps écoulé
+
         let elapsedTime = Date().timeIntervalSince(startTime)
+        // vérifier la réponse du joueur
         if elapsedTime > timeToAnswer {
             print("Temps écoulé! La question est considérée fausse.")
             lives -= 1
@@ -65,123 +175,262 @@ struct Quiz {
                 return
             }
         } else {
-            // Vérifier la réponse du joueur
-            if let playerChoice = chosenIndex {
+            if let chosenIndex = chosenIndex {
+                let playerChoice = chosenIndex
                 if playerChoice == question.answerIndex {
-                    print("Bonne réponse!")
+                    print(question.quote)
+                    joueur.score += question.difficulty // ajouter la difficulté de la question en points au score
                 } else {
-                    print("Mauvaise réponse!")
-                    lives -= 1 // Enlever une vie
+                    print("Mauvaise réponse!\n")
+                    lives -= 1 //on enleve une vie
                     if lives == 0 {
-                        print("Vous avez perdu.")
+                        print("Vous avez perdu! Votre score final est \(joueur.score).\n")
                         return
                     }
                 }
             }
         }
     }
-    
-    print("Félicitations! Vous avez répondu à toutes les questions avec succès..")
+    print("Félicitations! Vous avez répondu à toutes les questions avec succès. Votre score final est \(joueur.score).")
+}
 }
 
+func modifyQuestions() {
+    print("Éditeur de banque de questions:")
+    print("Quel niveau de difficulté souhaitez-vous modifier ? (1: Facile, 2: Moyen, 3: Difficile): ", terminator: "")
 
-}
-
-func loadQuestions(difficulty: Int) -> [Question]? {
-    // Vous devez définir ici vos questions en fonction de la difficulté.
-    // Voici juste un exemple de questions pour tester le code.
-
-    let questions: [Question]
-
-    switch difficulty {
-    case 1:
-        questions = [
-            Question(question: "Quelle est la capitale de la France ?", options: ["Paris", "Londres", "Berlin"], answerIndex: 0, difficulty: 1),
-            Question(question: "Combien de jours y a-t-il dans une année bissextile ?", options: ["365", "366", "364"], answerIndex: 1, difficulty: 1),
-            Question(question: "Qui a peint la Joconde ?", options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci"], answerIndex: 2, difficulty: 1)
-        ]
-    case 2:
-        questions = [
-            Question(question: "Quel est le plus grand océan du monde ?", options: ["Océan Atlantique", "Océan Arctique", "Océan Pacifique"], answerIndex: 2, difficulty: 2),
-            Question(question: "Quel est le symbole chimique de l'or ?", options: ["Au", "Ag", "Fe"], answerIndex: 0, difficulty: 2),
-            Question(question: "Quel est le plus grand désert chaud du monde ?", options: ["Sahara", "Antarctique", "Gobi"], answerIndex: 0, difficulty: 2)
-        ]
-    case 3:
-        questions = [
-            Question(question: "Quelle est la vitesse de la lumière en mètres par seconde (approximativement) ?", options: ["299 792 458", "100 000 000", "500 000 000"], answerIndex: 0, difficulty: 3),
-            Question(question: "Qui a écrit 'Guerre et Paix' ?", options: ["Fiodor Dostoïevski", "Léon Tolstoï", "Victor Hugo"], answerIndex: 1, difficulty: 3),
-            Question(question: "Quel est le composant principal de l'air ?", options: ["Azote", "Oxygène", "Dioxyde de carbone"], answerIndex: 1, difficulty: 3)
-        ]
-    default:
-        return nil
+    var difficulty = -1
+    while difficulty == -1 {
+        guard let difficultyInput = readLine(), let chosenDifficulty = Int(difficultyInput), chosenDifficulty >= 1 && chosenDifficulty <= 3 else {
+            print("Niveau de difficulté invalide. Veuillez entrer un nombre entre 1 et 3.")
+            continue
+        }
+        difficulty = chosenDifficulty
     }
 
-    return questions
+    print("Que souhaitez-vous faire ?\n")
+    print("1. Supprimer une question")
+    print("2. Ajouter une question\n")
+    print("Votre choix: ", terminator: "")
+
+    var choice = -1
+    while choice == -1 {
+        guard let choiceInput = readLine(), let chosenChoice = Int(choiceInput), chosenChoice == 1 || chosenChoice == 2 else {
+            print("Choix invalide. Veuillez entrer 1 ou 2.")
+            continue
+        }
+        choice = chosenChoice
+    }
+
+    guard var loadedQuestions = loadQuestions() else {
+        print("Impossible de charger les questions.")
+        return
+    }
+
+    switch choice {
+    case 1:
+        print("Voici les questions actuelles pour le niveau de difficulté \(difficulty):")
+        let filteredQuestions = loadedQuestions.filter { $0.difficulty == difficulty }
+        for (index, question) in filteredQuestions.enumerated() {
+            print("\(index + 1). \(question.question)")
+        }
+
+        var deleteIndex = -1
+        while deleteIndex == -1 {
+            print("Entrez le numéro de la question que vous souhaitez supprimer : ", terminator: "")
+            guard let deleteIndexInput = readLine(), let chosenIndex = Int(deleteIndexInput), chosenIndex >= 1 && chosenIndex <= filteredQuestions.count else {
+                print("Numéro de question invalide. Veuillez entrer un numéro valide.")
+                continue
+            }
+            deleteIndex = chosenIndex
+        }
+
+        let deletedQuestion = filteredQuestions[deleteIndex - 1]
+        print("Question supprimée: \(deletedQuestion.question)")
+
+        loadedQuestions.removeAll { $0.question == deletedQuestion.question }
+
+        do {
+            try saveQuestions(questions: loadedQuestions)
+            print("Question supprimée avec succès.  \n\n")
+        } catch {
+            print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
+        }
+
+    case 2:
+        print("Ajout d'une nouvelle question:")
+        print("Entrez l'énoncé de la question: ", terminator: "")
+        guard let newQuestion = readLine(), !newQuestion.isEmpty else {
+            print("Énoncé de la question invalide.")
+            return
+        }
+
+        var responses = [String]()
+        for i in 1...4 {
+            var response = ""
+            while response.isEmpty {
+                print("Entrez la réponse \(i): ", terminator: "")
+                response = readLine() ?? ""
+                if response.isEmpty {
+                    print("Réponse invalide. Veuillez entrer une réponse valide.")
+                }
+            }
+            responses.append(response)
+        }
+
+        var answerIndex = -1
+        while answerIndex == -1 {
+            print("Entrez l'index de la réponse correcte (1-4) : ", terminator: "")
+            guard let answerIndexInput = readLine(), let index = Int(answerIndexInput), index >= 1 && index <= 4 else {
+                print("Index de réponse invalide. Veuillez entrer un index valide.")
+                continue
+            }
+            answerIndex = index
+        }
+
+        var quote = ""
+        while quote.isEmpty {
+            print("Entrez la quote de la question (1-10) : ", terminator: "")
+            quote = readLine() ?? ""
+            if quote.isEmpty {
+                print("Quote de la question invalide. Veuillez entrer une quote valide.")
+            }
+        }
+
+        let newQuestionObject = Question(question: newQuestion, options: responses, answerIndex: answerIndex - 1, difficulty: difficulty, quote: quote)
+        loadedQuestions.append(newQuestionObject)
+
+        do {
+            try saveQuestions(questions: loadedQuestions)
+            print("Question ajoutée avec succès.  \n\n")
+        } catch {
+            print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
+        }
+
+    default:
+        print("Choix invalide.")
+    }
 }
+
+
+
+//fonction pour filtrer les questions selon le niveau de difficulté
+func filterQuestions(difficulty : Int, questions : [Question]) -> [Question]{
+         // Filtrer les questions en fonction de la difficulté choisie
+        let filteredQuestions = questions.filter { $0.difficulty <= difficulty }
+
+        return filteredQuestions
+}
+
+
+//fonction pour filtrer les questions selon le niveau de difficulté mais radicale ( ex : niveau 3 que les questions de niveau 3 pas las anciens)
+func filterQuestionsClosed(difficulty : Int, questions : [Question]) -> [Question]{
+         // Filtrer les questions en fonction de la difficulté choisie
+        let filteredQuestions = questions.filter { $0.difficulty == difficulty }
+
+        return filteredQuestions
+}
+
+
+
+func saveQuestions(questions: [Question]) throws {
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    let data = try encoder.encode(questions)
+    let currentDirectoryURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+    let saveURL = currentDirectoryURL.appendingPathComponent("questions.json")
+    try data.write(to: saveURL)
+}
+
 
 
 
 
 func main() {
- var continuerJeu = true
+    var continuerJeu = true
 
-    while continuerJeu{
-    print("Bienvenue dans le Quiz!")
     
-    // Demander le nom du joueur
-    print("Entrez votre nom: ")
-    guard let playerName = readLine(), !playerName.isEmpty else {
-        print("Nom invalide.")
-        return
-    }
 
+    while continuerJeu {
+        print("\n Menu Principal: \n")
+        print("1. Démarrer le jeu")
+        print("2. Éditeur de banque de questions")
+        print("3. Quitter \n")
+        print("Votre choix: ", terminator: "")
 
-    // Demander au joueur de choisir une difficulté
-    var difficulty: Int = 0
-    while difficulty < 1 || difficulty > 3 {
-        print("Choisissez votre difficulté (1: Facile, 2: Moyen, 3: Difficile): ")
-        if let input = readLine(), let chosenDifficulty = Int(input) {
-            difficulty = chosenDifficulty
-        } else {
-            print("Entrée invalide. Veuillez entrer un nombre entre 1 et 3.")
+        guard let choice = readLine(), let menuChoice = Int(choice) else {
+            print("Choix invalide.")
+            continue
         }
-    }
-    
 
-
-    // Charger les questions
-    guard let questions = loadQuestions(difficulty: difficulty) else {
-        print("Impossible de charger les questions.")
-        return
-    }
-
-    // si difficile durée limitée à 8 secondes
-    let timeLimit: TimeInterval = (difficulty == 3) ? 8.0 : .infinity
-
-    var quiz: Quiz
-    switch difficulty {
-    case 1:
-        quiz = Quiz(questions: questions, lives: 6, timeLimit: timeLimit)
-    case 2:
-        quiz = Quiz(questions: questions, lives: 4, timeLimit: timeLimit)
-    case 3:
-        quiz = Quiz(questions: questions, lives: 2, timeLimit: timeLimit)
-    default:
-        fatalError("Difficulté invalide.")
-    }
-
- 
-    quiz.start() 
-    print("Voulez-vous lancer une nouvelle partie ? (oui/non)")
-        let choix = readLine()?.lowercased()
-        if choix == "non" {
+        switch menuChoice {
+        case 1:
+            guard let questions = loadQuestions() else {
+                print("Impossible de charger les questions.")
+                return
+            }
+            // Démarrer le jeu
+            print("Bienvenue dans le Quiz!\n")
+            
+            // Demander le nom du joueur
+            print("Entrez votre nom: ")
+            guard let playerName = readLine(), !playerName.isEmpty else {
+                print("Nom invalide.")
+                return
+            }
+            
+            // Demander au joueur de choisir une difficulté
+            var difficulty: Int = 0
+            while difficulty < 1 || difficulty > 3 {
+                print("\nChoisissez votre difficulté (1: Facile, 2: Moyen, 3: Difficile): ")
+                if let input = readLine(), let chosenDifficulty = Int(input) {
+                    difficulty = chosenDifficulty
+                } else {
+                    print("Entrée invalide. Veuillez entrer un nombre entre 1 et 3.")
+                }
+            }
+            
+            // Créer une instance de Joueur avec le nom saisi
+            var joueur = Joueur(nom: playerName, score: 0, difficulty: difficulty)
+            
+            // si difficile durée limitée à 8 secondes
+            let timeLimit: TimeInterval = (difficulty == 3) ? 8.0 : .infinity
+            
+            var quiz: Quiz
+            switch difficulty {
+            case 1:
+                quiz = Quiz(questions: filterQuestions(difficulty : difficulty, questions : questions), lives: 6, timeLimit: timeLimit)
+            case 2:
+                quiz = Quiz(questions: filterQuestions(difficulty : difficulty, questions : questions), lives: 4, timeLimit: timeLimit)
+            case 3:
+                quiz = Quiz(questions: filterQuestions(difficulty : difficulty, questions : questions), lives: 2, timeLimit: timeLimit)
+            default:
+                fatalError("Difficulté invalide.")
+            }
+            
+            // Démarrer le quiz
+            quiz.start(joueur: &joueur) // Passage du par reference pour pouvoir modifier le score
+            saveScores(joueur: joueur)
+            leaderboard(joueur: joueur)
+            
+        case 2:
+            modifyQuestions()
+            
+            
+        case 3:
+            // quitter l'application
             continuerJeu = false
+            print("Merci d'avoir joué au Quiz !")
+            
+        default:
+            print("Choix invalide.")
         }
+    }
 }
 
-print("Merci d'avoir joué au Quiz !")
-
-
-}
-
+// Appeler la fonction principale
 main()
+
+
+
+
