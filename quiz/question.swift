@@ -57,12 +57,13 @@ func modifyQuestions() {
 
     print("Que souhaitez-vous faire ?\n")
     print("1. Supprimer une question")
-    print("2. Ajouter une question\n")
+    print("2. Ajouter une question")
+  print("3. Modifier une question\n")
     print("Votre choix: ", terminator: "")
 
     var choice = -1
     while choice == -1 {
-        guard let choiceInput = readLine(), let chosenChoice = Int(choiceInput), chosenChoice == 1 || chosenChoice == 2 else {
+        guard let choiceInput = readLine(), let chosenChoice = Int(choiceInput), chosenChoice == 1 || chosenChoice == 2 || chosenChoice == 3 else {
             print("Choix invalide. Veuillez entrer 1 ou 2.")
             continue
         }
@@ -103,6 +104,10 @@ func modifyQuestions() {
         } catch {
             print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
         }
+
+
+
+      
 
     case 2:
         print("Ajout d'une nouvelle question:")
@@ -153,9 +158,13 @@ func modifyQuestions() {
         } catch {
             print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
         }
+
+
+
+      
          case 3:
-        print("Modification d'une question:")
-        print("Voici les questions actuelles pour le niveau de difficulté \(difficulty):")
+        print("Modification d'une question:\n")
+        print("Voici les questions actuelles pour le niveau de difficulté \(difficulty):\n\n")
         let filteredQuestions = loadedQuestions.filter { $0.difficulty == difficulty }
         for (index, question) in filteredQuestions.enumerated() {
             print("\(index + 1). \(question.question)")
@@ -163,7 +172,7 @@ func modifyQuestions() {
 
         var modifyIndex = -1
         while modifyIndex == -1 {
-            print("Entrez le numéro de la question que vous souhaitez modifier : ", terminator: "")
+            print("\nEntrez le numéro de la question que vous souhaitez modifier : ", terminator: "")
             guard let modifyIndexInput = readLine(), let chosenIndex = Int(modifyIndexInput), chosenIndex >= 1 && chosenIndex <= filteredQuestions.count else {
                 print("Numéro de question invalide. Veuillez entrer un numéro valide.")
                 continue
@@ -173,15 +182,14 @@ func modifyQuestions() {
 
         let selectedQuestion = filteredQuestions[modifyIndex - 1]
 
-        print("Que souhaitez-vous modifier ?")
+        print("\nQue souhaitez-vous modifier ?\n")
         print("1. Énoncé de la question")
         print("2. Réponses")
-        print("3. Tout\n")
         print("Votre choix: ", terminator: "")
 
         var modificationChoice = -1
         while modificationChoice == -1 {
-            guard let modificationChoiceInput = readLine(), let chosenModificationChoice = Int(modificationChoiceInput), chosenModificationChoice >= 1 && chosenModificationChoice <= 3 else {
+            guard let modificationChoiceInput = readLine(), let chosenModificationChoice = Int(modificationChoiceInput), chosenModificationChoice >= 1 && chosenModificationChoice <= 2 else {
                 print("Choix invalide. Veuillez entrer 1, 2 ou 3.")
                 continue
             }
@@ -189,48 +197,67 @@ func modifyQuestions() {
         }
 
         switch modificationChoice {
-        case 1:
-            print("Entrez le nouvel énoncé de la question: ", terminator: "")
-            guard let newQuestion = readLine(), !newQuestion.isEmpty else {
-                print("Énoncé de la question invalide.")
-                return
-            }
-            loadedQuestions[modifyIndex - 1].question = newQuestion
-        case 2:
-            var newResponses = [String]()
-            for i in 1...4 {
-                var response = ""
-                while response.isEmpty {
-                    print("Entrez la nouvelle réponse \(i): ", terminator: "")
-                    response = readLine() ?? ""
-                    if response.isEmpty {
-                        print("Réponse invalide. Veuillez entrer une réponse valide.")
-                    }
-                }
-                newResponses.append(response)
-            }
-            loadedQuestions[modifyIndex - 1].options = newResponses
-        case 3:
-            print("Entrez le nouvel énoncé de la question: ", terminator: "")
-            guard let newQuestion = readLine(), !newQuestion.isEmpty else {
-                print("Énoncé de la question invalide.")
-                return
-            }
-            loadedQuestions[modifyIndex - 1].question = newQuestion
+          case 1:
+              print("Ancien énoncé de la question: \(selectedQuestion.question)")
+              print("Entrez le nouvel énoncé de la question: ", terminator: "")
+              guard let newQuestion = readLine(), !newQuestion.isEmpty else {
+                  print("Énoncé de la question invalide.")
+                  return
+              }
+              loadedQuestions[loadedQuestions.firstIndex(where: { $0.question == selectedQuestion.question })!].question = newQuestion
 
-            var newResponses = [String]()
-            for i in 1...4 {
-                var response = ""
-                while response.isEmpty {
-                    print("Entrez la nouvelle réponse \(i): ", terminator: "")
-                    response = readLine() ?? ""
-                    if response.isEmpty {
-                        print("Réponse invalide. Veuillez entrer une réponse valide.")
-                    }
-                }
-                newResponses.append(response)
-            }
-            loadedQuestions[modifyIndex - 1].options = newResponses
+
+
+
+          
+          case 2:
+          print("Anciennes réponses:")
+          for (index, response) in selectedQuestion.options.enumerated() {
+              print("\(index + 1). \(response)")
+          }
+
+          var newResponses = [String]()
+          for i in 1...4 {
+              var response = ""
+              while response.isEmpty {
+                  print("Entrez la nouvelle réponse \(i): ", terminator: "")
+                  response = readLine() ?? ""
+                  if response.isEmpty {
+                      print("Réponse invalide. Veuillez entrer une réponse valide.")
+                  }
+              }
+              newResponses.append(response)
+          }
+
+          var answerIndex = selectedQuestion.answerIndex + 1
+          print("L'index de la réponse correcte est actuellement \(answerIndex). Souhaitez-vous le modifier ? (Oui/Non): ", terminator: "")
+          guard let modifyAnswerIndex = readLine()?.lowercased(), modifyAnswerIndex == "oui" || modifyAnswerIndex == "non" else {
+              print("Réponse invalide. Veuillez entrer Oui ou Non.")
+              return
+          }
+
+          if modifyAnswerIndex == "oui" {
+              var newIndex = -1
+              while newIndex == -1 {
+                  print("Entrez le nouvel index de la réponse correcte (1-4) : ", terminator: "")
+                  guard let newIndexInput = readLine(), let index = Int(newIndexInput), index >= 1 && index <= 4 else {
+                      print("Index de réponse invalide. Veuillez entrer un index valide.")
+                      continue
+                  }
+                  newIndex = index
+              }
+              answerIndex = newIndex
+          }
+
+          loadedQuestions[loadedQuestions.firstIndex(where: { $0.question == selectedQuestion.question })!].options = newResponses
+          loadedQuestions[loadedQuestions.firstIndex(where: { $0.question == selectedQuestion.question })!].answerIndex = answerIndex - 1
+
+
+
+          
+          
+
+
         default:
             print("Choix invalide.")
         }
@@ -245,6 +272,9 @@ func modifyQuestions() {
         print("Choix invalide.")
     }
 }
+
+
+
 
 
 //fonction pour filtrer les questions selon le niveau de difficulté
