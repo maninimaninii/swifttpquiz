@@ -127,75 +127,78 @@ struct Quiz {
     var lives: Int //nombre de vies
     var timeLimit: TimeInterval //limite de temps
 
-mutating func start(joueur: inout Joueur) {
-    print("Début du quiz!")
+  mutating func start(joueur: inout Joueur) {
+      print("Début du quiz!")
 
-    for question in questions {
-        print("\nQuestion: \(question.question)")
-        print("Options:")
-        for (index, option) in question.options.enumerated() {
-            print("\(index + 1). \(option)")
-        }
-      print("\n")
+      var remainingQuestions = questions.shuffled() // mélanger les questions
 
-        // si le joueur prend le mode difficile, il aura une durée de réponse limitée
-        let timeToAnswer = question.difficulty == 3 ? timeLimit : .infinity
-        let startTime = Date()
+      for question in remainingQuestions {
+          print("\nQuestion: \(question.question)")
+          print("Options:")
+          for (index, option) in question.options.enumerated() {
+              print("\(index + 1). \(option)")
+          }
+          print("\n")
 
-        if question.difficulty == 3 {
-            // attendre la réponse du joueur
-            print("Vous avez \(Int(timeToAnswer)) secondes pour répondre.")
-        }
-        print("Votre réponse: ")
+          let timeToAnswer = question.difficulty == 3 ? timeLimit : .infinity
+          let startTime = Date()
 
-        var validAnswer = false // Variable pour vérifier la validité de la réponse
-        var chosenIndex: Int? // Variable pour stocker la réponse choisie
+          if question.difficulty == 3 {
+              print("Vous avez \(Int(timeToAnswer)) secondes pour répondre.")
+          }
+          print("Votre réponse: ")
 
-        // Boucle jusqu'à ce qu'une réponse valide soit entrée
-        while !validAnswer {
-            if let answer = readLine(), let playerChoice = Int(answer) {
-                if playerChoice >= 1 && playerChoice <= question.options.count {
-                    chosenIndex = playerChoice - 1
-                    validAnswer = true // La réponse est valide
-                } else {
-                    print("Réponse invalide. Veuillez entrer un nombre entre 1 et \(question.options.count).")
-                }
-            } else {
-                print("Réponse invalide. Veuillez entrer un nombre entre 1 et \(question.options.count).")
-            }
-        }
+          var validAnswer = false // variable pour vérifier la validité de la réponse
+          var chosenIndex: Int? // variable pour stocker la réponse choisie
 
-        let elapsedTime = Date().timeIntervalSince(startTime)
-        // vérifier la réponse du joueur
-        if elapsedTime > timeToAnswer {
-            print("Temps écoulé! La question est considérée fausse.")
-            lives -= 1
-            if lives == 0 {
-                print("Vous avez perdu!.")
-                return
-            }
-        } else {
-            if let chosenIndex = chosenIndex {
-                let playerChoice = chosenIndex
-                if playerChoice == question.answerIndex {
-                    print(question.quote)
-                    joueur.score += question.difficulty // ajouter la difficulté de la question en points au score
-                } else {
-                    print("Mauvaise réponse!\n")
-                    lives -= 1 //on enleve une vie
-                    if lives == 0 {
-                        print("Vous avez perdu! Votre score final est \(joueur.score).\n")
-                        return
-                    }
-                }
-            }
-        }
-    }
-    print("Félicitations! Vous avez répondu à toutes les questions avec succès. Votre score final est \(joueur.score).")
+          while !validAnswer {
+              if let answer = readLine(), let playerChoice = Int(answer) {
+                  if playerChoice >= 1 && playerChoice <= question.options.count {
+                      chosenIndex = playerChoice - 1
+                      validAnswer = true // la réponse est valide
+                  } else {
+                      print("Réponse invalide. Veuillez entrer un nombre entre 1 et \(question.options.count).")
+                  }
+              } else {
+                  print("Réponse invalide. Veuillez entrer un nombre entre 1 et \(question.options.count).")
+              }
+          }
+
+          let elapsedTime = Date().timeIntervalSince(startTime)
+
+          if elapsedTime > timeToAnswer {
+              print("Temps écoulé! La question est considérée fausse.")
+              lives -= 1
+              if lives == 0 {
+                  print("Vous avez perdu!.")
+                  return
+              }
+          } else {
+              if let chosenIndex = chosenIndex {
+                  let playerChoice = chosenIndex
+                  if playerChoice == question.answerIndex {
+                      joueur.score += question.difficulty // ajouter la difficulté de la question en points au score
+                      print("\(question.quote)\n\nVotre score est actuellement de : \(joueur.score)\n\n") // affichage du score du joueur
+                  } else {
+                      print("Mauvaise réponse!\n")
+                      lives -= 1 // on enleve une vie
+                      if lives == 0 {
+                          print("Vous avez perdu! Votre score final est \(joueur.score).\n")
+                          return
+                      }
+                  }
+              }
+          }
+
+          remainingQuestions.removeFirst() // retirer la question posée de la liste des questions restantes
+      }
+
+      print("Félicitations! Vous avez répondu à toutes les questions avec succès. Votre score final est \(joueur.score).")
+  }
+
 }
-}
 
-func modifyQuestions() {
+func modifyQuestions() { //editeur de questions
     print("Éditeur de banque de questions:")
     print("Quel niveau de difficulté souhaitez-vous modifier ? (1: Facile, 2: Moyen, 3: Difficile): ", terminator: "")
 
@@ -211,13 +214,13 @@ func modifyQuestions() {
     print("Que souhaitez-vous faire ?\n")
     print("1. Supprimer une question")
     print("2. Ajouter une question")
-  print("3. Modifier une question\n")
+    print("3. Modifier une question")
     print("Votre choix: ", terminator: "")
 
     var choice = -1
     while choice == -1 {
         guard let choiceInput = readLine(), let chosenChoice = Int(choiceInput), chosenChoice == 1 || chosenChoice == 2 || chosenChoice == 3 else {
-            print("Choix invalide. Veuillez entrer 1 ou 2.")
+            print("Choix invalide. Veuillez entrer 1,2ou 3.\n")
             continue
         }
         choice = chosenChoice
@@ -229,15 +232,15 @@ func modifyQuestions() {
     }
 
     switch choice {
-    case 1:
+    case 1:  
         print("Voici les questions actuelles pour le niveau de difficulté \(difficulty):")
-        let filteredQuestions = loadedQuestions.filter { $0.difficulty == difficulty }
+        let filteredQuestions = loadedQuestions.filter { $0.difficulty == difficulty } //on recupere les questions du niveau choisi
         for (index, question) in filteredQuestions.enumerated() {
             print("\(index + 1). \(question.question)")
         }
 
         var deleteIndex = -1
-        while deleteIndex == -1 {
+        while deleteIndex == -1 { //choix de la question
             print("Entrez le numéro de la question que vous souhaitez supprimer : ", terminator: "")
             guard let deleteIndexInput = readLine(), let chosenIndex = Int(deleteIndexInput), chosenIndex >= 1 && chosenIndex <= filteredQuestions.count else {
                 print("Numéro de question invalide. Veuillez entrer un numéro valide.")
@@ -249,9 +252,9 @@ func modifyQuestions() {
         let deletedQuestion = filteredQuestions[deleteIndex - 1]
         print("Question supprimée: \(deletedQuestion.question)")
 
-        loadedQuestions.removeAll { $0.question == deletedQuestion.question }
+        loadedQuestions.removeAll { $0.question == deletedQuestion.question } //suppression de la liste
 
-        do {
+        do { //on sauvegarde dans le json
             try saveQuestions(questions: loadedQuestions)
             print("Question supprimée avec succès.  \n\n")
         } catch {
@@ -264,13 +267,13 @@ func modifyQuestions() {
 
     case 2:
         print("Ajout d'une nouvelle question:")
-        print("Entrez l'énoncé de la question: ", terminator: "")
+        print("Entrez l'énoncé de la question: ", terminator: "") //on commence par ajouter l'énoncer
         guard let newQuestion = readLine(), !newQuestion.isEmpty else {
             print("Énoncé de la question invalide.")
             return
         }
 
-        var responses = [String]()
+        var responses = [String]() //ensuite les options de réponse
         for i in 1...4 {
             var response = ""
             while response.isEmpty {
@@ -283,7 +286,7 @@ func modifyQuestions() {
             responses.append(response)
         }
 
-        var answerIndex = -1
+        var answerIndex = -1  //enfin l'index de réponse correcte puis la quote
         while answerIndex == -1 {
             print("Entrez l'index de la réponse correcte (1-4) : ", terminator: "")
             guard let answerIndexInput = readLine(), let index = Int(answerIndexInput), index >= 1 && index <= 4 else {
@@ -302,11 +305,11 @@ func modifyQuestions() {
             }
         }
 
-        let newQuestionObject = Question(question: newQuestion, options: responses, answerIndex: answerIndex - 1, difficulty: difficulty, quote: quote)
+        let newQuestionObject = Question(question: newQuestion, options: responses, answerIndex: answerIndex - 1, difficulty: difficulty, quote: quote) //creation de l'objet qui sera ajouté
         loadedQuestions.append(newQuestionObject)
 
         do {
-            try saveQuestions(questions: loadedQuestions)
+            try saveQuestions(questions: loadedQuestions) //on sauvegarde dans le json
             print("Question ajoutée avec succès.  \n\n")
         } catch {
             print("Erreur lors de la sauvegarde des questions: \(error.localizedDescription)")
@@ -350,7 +353,7 @@ func modifyQuestions() {
         }
 
         switch modificationChoice {
-          case 1:
+          case 1:  //on remplace l'anoncé de la question
               print("Ancien énoncé de la question: \(selectedQuestion.question)")
               print("Entrez le nouvel énoncé de la question: ", terminator: "")
               guard let newQuestion = readLine(), !newQuestion.isEmpty else {
@@ -415,7 +418,7 @@ func modifyQuestions() {
             print("Choix invalide.")
         }
 
-        do {
+        do { //à la fin on sauvegarde dans le json peu importe la modif
             try saveQuestions(questions: loadedQuestions)
             print("Question modifiée avec succès.  \n\n")
         } catch {
@@ -446,7 +449,7 @@ func filterQuestionsClosed(difficulty : Int, questions : [Question]) -> [Questio
 
 
 
-func saveQuestions(questions: [Question]) throws {
+func saveQuestions(questions: [Question]) throws { //question pour sauvegarder dans le json
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     let data = try encoder.encode(questions)
@@ -482,17 +485,17 @@ func main() {
                 print("Impossible de charger les questions.")
                 return
             }
-            // Démarrer le jeu
+            // démarrer le jeu
             print("Bienvenue dans le Quiz!\n")
 
-            // Demander le nom du joueur
+            // demander le nom du joueur
             print("Entrez votre nom: ")
             guard let playerName = readLine(), !playerName.isEmpty else {
                 print("Nom invalide.")
                 return
             }
 
-            // Demander au joueur de choisir une difficulté
+            // demander au joueur de choisir une difficulté
             var difficulty: Int = 0
             while difficulty < 1 || difficulty > 3 {
                 print("\nChoisissez votre difficulté (1: Facile, 2: Moyen, 3: Difficile): ")
@@ -503,7 +506,7 @@ func main() {
                 }
             }
 
-            // Créer une instance de Joueur avec le nom saisi
+            // créer une instance de Joueur avec le nom saisi
             var joueur = Joueur(nom: playerName, score: 0, difficulty: difficulty)
 
             // si difficile durée limitée à 8 secondes
@@ -512,21 +515,22 @@ func main() {
             var quiz: Quiz
             switch difficulty {
             case 1:
-                quiz = Quiz(questions: filterQuestions(difficulty : difficulty, questions : questions), lives: 6, timeLimit: timeLimit)
+                quiz = Quiz(questions: filterQuestionsClosed(difficulty : difficulty, questions : questions), lives: 6, timeLimit: timeLimit)
             case 2:
-                quiz = Quiz(questions: filterQuestions(difficulty : difficulty, questions : questions), lives: 4, timeLimit: timeLimit)
+                quiz = Quiz(questions: filterQuestionsClosed(difficulty : difficulty, questions : questions), lives: 4, timeLimit: timeLimit)
             case 3:
-                quiz = Quiz(questions: filterQuestions(difficulty : difficulty, questions : questions), lives: 2, timeLimit: timeLimit)
+                quiz = Quiz(questions: filterQuestionsClosed(difficulty : difficulty, questions : questions), lives: 2, timeLimit: timeLimit)
             default:
                 fatalError("Difficulté invalide.")
             }
 
-            // Démarrer le quiz
-            quiz.start(joueur: &joueur) // Passage du par reference pour pouvoir modifier le score
+            // démarrer le quiz
+            quiz.start(joueur: &joueur) // passage du par reference pour pouvoir modifier le score
             saveScores(joueur: joueur)
             leaderboard(joueur: joueur)
 
         case 2:
+        //lancer l'editeur de banque de questions
             modifyQuestions()
 
 
@@ -541,7 +545,7 @@ func main() {
     }
 }
 
-// Appeler la fonction principale
+// appeler la fonction principale
 main()
 
 
