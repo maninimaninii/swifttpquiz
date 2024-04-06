@@ -12,7 +12,7 @@ struct Question: Codable {
   }
 }
 
-// Function to load JSON data from the questions.json file
+// fonction pour charger les questions
 func loadQuestions() -> [Question]? {
   if let jsonData = loadJsonData(fileName: "questions.json") {
       do {
@@ -28,7 +28,7 @@ func loadQuestions() -> [Question]? {
   }
 }
 
-// Function to load JSON data from a file
+// fonction pour charger des données depuis un json
 func loadJsonData(fileName: String) -> Data? {
   let currentDirectoryURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
   let jsonFileURL = currentDirectoryURL.appendingPathComponent(fileName)
